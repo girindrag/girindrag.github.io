@@ -1,6 +1,7 @@
 import React from 'react';
 import { portfolioData } from '../data/portfolioData';
 import { ArrowUpRight, Star } from 'lucide-react';
+import { soundEngine } from '../utils/audioEngine';
 
 export default function NakitiSelectedWork() {
   const { projects } = portfolioData;
@@ -27,6 +28,7 @@ export default function NakitiSelectedWork() {
         {projects.map((project, idx) => (
           <div
             key={project.id}
+            onMouseEnter={() => soundEngine.playClick()}
             className="nakiti-project-card p-6 sm:p-10 rounded-2xl bg-[#0f0f13] border border-white/[0.08] flex flex-col justify-between cursor-pointer group"
           >
             <div>
