@@ -28,7 +28,7 @@ export default function AppleTerminalStage() {
   • whoami   - Profile overview and engineering summary
   • skills   - Technical stack: Docker, Kubernetes, Ansible, Azure IoT
   • projects - Key production systems and frameworks
-  • exp      - Career roles: Harman, DXC (SBI Data Center), Genex
+  • exp      - Career roles: Harman Connected Services, DXC Technology (SBI Data Center)
   • contact  - Direct contact methods & links
   • clear    - Clear terminal screen`
         });
@@ -70,8 +70,7 @@ Certifications: Microsoft Certified Azure Administrator Associate`
         newHistory.push({
           type: 'output',
           text: `• Harman Connected Services (2023 - Present): Team Lead, IoT & Containers
-• DXC Technology (2021 - 2023): System Administration, SBI 24/7 Data Center
-• Genex Corporate Services (2020 - 2021): System Administrator, Azure IoT`
+• DXC Technology (2021 - 2023): System Administration, SBI 24/7 Data Center`
         });
         break;
 

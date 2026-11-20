@@ -12,7 +12,6 @@ export default function AppleBentoHighlights() {
 
   const harman = experience[0];
   const dxc = experience[1];
-  const genex = experience[2];
 
   return (
     <section id="experience" className="py-20 px-4 sm:px-6 max-w-6xl mx-auto">
@@ -124,43 +123,7 @@ export default function AppleBentoHighlights() {
           </div>
         </div>
 
-        {/* Card 3: Genex Corporate Services (Spans 6 cols) */}
-        <div className="md:col-span-6 apple-card p-6 sm:p-7 flex flex-col justify-between bg-white dark:bg-gradient-to-b dark:from-[#1c1c1e] dark:to-[#121213]">
-          <div>
-            <div className="flex items-center justify-between mb-3">
-              <span className="px-3 py-1 bg-purple-500/10 text-purple-600 dark:text-purple-300 border border-purple-500/20 rounded-full text-xs font-semibold">
-                IoT Edge &amp; Computer Vision
-              </span>
-              <span className="text-xs text-[#6e6e73] dark:text-[#86868b]">{genex.period}</span>
-            </div>
-
-            <h3 className="text-xl sm:text-2xl font-bold text-[#1d1d1f] dark:text-white tracking-tight">
-              {genex.company}
-            </h3>
-            <p className="text-xs text-purple-600 dark:text-purple-300 font-medium mt-0.5">
-              System Administrator • SlumberJS Client Location
-            </p>
-
-            <div className="mt-4 space-y-2 text-xs text-[#333336] dark:text-[#d2d2d7]">
-              {genex.highlights.map((h, i) => (
-                <div key={i} className="flex items-start space-x-2">
-                  <CheckCircle className="w-3.5 h-3.5 text-purple-500 dark:text-purple-400 shrink-0 mt-0.5" />
-                  <span>{h}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="flex flex-wrap gap-1.5 mt-5 pt-4 border-t border-black/5 dark:border-white/5">
-            {genex.technologies.map((t) => (
-              <span key={t} className="px-2 py-0.5 text-[10px] bg-black/5 dark:bg-white/5 text-[#6e6e73] dark:text-[#a1a1a6] rounded font-mono">
-                {t}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        {/* Card 4: Official Credentials & Education (Spans 6 cols) */}
+        {/* Card 3: Official Credentials & Education (Spans 6 cols) */}
         <div className="md:col-span-6 apple-card p-6 sm:p-7 flex flex-col justify-between bg-white dark:bg-gradient-to-b dark:from-[#1c1c1e] dark:to-[#121213]">
           <div>
             <span className="px-3 py-1 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 rounded-full text-xs font-semibold">

@@ -33,7 +33,7 @@ export default function TerminalWindow({ onOpenApp }) {
   • bio        - Display Girindra's summary and background
   • skills     - List core technical competencies & infrastructure tools
   • projects   - Showcase production projects
-  • exp        - Show professional career history (Harman, DXC, Genex)
+  • exp        - Show professional career history (Harman, DXC)
   • contact    - Display email, phone, and social handles
   • uname -a   - Show operating system and kernel info
   • clear      - Clear terminal screen`
@@ -79,8 +79,7 @@ Education: B.E. in Information Technology`
           type: 'output',
           text: `[Career History]
 • Harman Connected Services (2023 - Present): Team Lead, IoT & Container Infrastructure
-• DXC Technology (2021 - 2023): System Administration, SBI 24/7 Data Center (400+ servers)
-• Genex Corporate Services (2020 - 2021): System Administrator, Azure IoT & Linux Containers`
+• DXC Technology (2021 - 2023): System Administration, SBI 24/7 Data Center (400+ servers)`
         });
         break;
 

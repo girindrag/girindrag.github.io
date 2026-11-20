@@ -21,7 +21,7 @@ export default function Spotlight({ isOpen, onClose, onOpenApp }) {
     { type: 'app', id: 'about', title: 'About Girindra Mohan', desc: 'Summary, background and bio', icon: User },
     { type: 'app', id: 'projects', title: 'Projects & Work', desc: 'Edge IoT, SBI Data Center, Azure telemetry', icon: Boxes },
     { type: 'app', id: 'skills', title: 'Technical Skills & Architecture', desc: 'Docker, Linux, Ansible, Azure IoT, K8s', icon: Cpu },
-    { type: 'app', id: 'experience', title: 'Work Experience Log', desc: 'Harman, DXC Technology, Genex', icon: FileText },
+    { type: 'app', id: 'experience', title: 'Work Experience Log', desc: 'Harman Connected Services, DXC Technology', icon: FileText },
     { type: 'app', id: 'terminal', title: 'Interactive macOS Terminal', desc: 'Run commands: help, bio, projects, contact', icon: Terminal },
     { type: 'app', id: 'contact', title: 'Contact & Hire', desc: 'Email: iamgirindra@gmail.com', icon: Mail },
     ...portfolioData.projects.map(p => ({

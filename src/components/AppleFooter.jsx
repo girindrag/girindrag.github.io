@@ -38,7 +38,6 @@ export default function AppleFooter() {
             <ul className="space-y-1.5">
               <li><a href="#experience" className="hover:text-[#1d1d1f] dark:hover:text-white transition-colors">Harman Connected Services</a></li>
               <li><a href="#experience" className="hover:text-[#1d1d1f] dark:hover:text-white transition-colors">DXC Technology (SBI-ITFO)</a></li>
-              <li><a href="#experience" className="hover:text-[#1d1d1f] dark:hover:text-white transition-colors">Genex Corporate Services</a></li>
               <li><a href="./Girindra_Mohan_Resume.pdf" download className="hover:text-[#1d1d1f] dark:hover:text-white transition-colors">Official Resume (PDF)</a></li>
             </ul>
           </div>

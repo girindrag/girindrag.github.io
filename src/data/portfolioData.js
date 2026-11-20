@@ -50,20 +50,6 @@ export const portfolioData = {
         "Authored resilient automation scripts using Ansible, Python, and Bash; created and modified ASM disk groups.",
       ],
       technologies: ["RHEL", "HP-UX", "Ansible", "Python", "Bash", "HP Blade", "Superdome", "ASM Disks", "Git"]
-    },
-    {
-      company: "Genex Corporate Services",
-      role: "System Administrator",
-      period: "11/2020 – 08/2021",
-      location: "Navi Mumbai, India",
-      badge: "IoT & Cloud",
-      highlights: [
-        "Managed and maintained heterogeneous Linux and Windows servers, handling rapid troubleshooting and SLA adherence.",
-        "Supported edge IoT devices, camera streaming feeds, and integrated hardware APIs for client deployments (SlumberJS).",
-        "Leveraged Azure IoT services for device telemetry, provisioning, and fleet management.",
-        "Constructed optimized container images with Dockerfile and coordinated workloads using Kubernetes.",
-      ],
-      technologies: ["Azure IoT", "Docker", "Kubernetes", "Linux", "Windows Server", "Ansible", "Camera APIs", "CI/CD"]
     }
   ],
 
