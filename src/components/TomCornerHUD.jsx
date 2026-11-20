@@ -113,6 +113,13 @@ export default function TomCornerHUD() {
                 W<span className="playfair-o">O</span>RK
               </a>
               <a
+                href="#skills"
+                onClick={() => setMenuOpen(false)}
+                className="block font-display text-4xl sm:text-6xl md:text-7xl font-extrabold text-[#E7E1D7] hover:text-[#F34213] hover:translate-x-3 transition-all duration-200 uppercase tracking-tight group"
+              >
+                <span>SKILLS <span className="playfair-o text-[#F34213]">R</span>ING</span>
+              </a>
+              <a
                 href="#experience"
                 onClick={() => setMenuOpen(false)}
                 className="block font-display text-4xl sm:text-6xl md:text-7xl font-extrabold text-[#E7E1D7] hover:text-[#F34213] hover:translate-x-3 transition-all duration-200 uppercase tracking-tight"

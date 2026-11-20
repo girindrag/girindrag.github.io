@@ -4,6 +4,7 @@ import TomCornerHUD from './components/TomCornerHUD';
 import TomHero from './components/TomHero';
 import TomAboutInfo from './components/TomAboutInfo';
 import TomCurvedShowcase from './components/TomCurvedShowcase';
+import SkhiladzeSkillRing from './components/SkhiladzeSkillRing';
 import TomExperienceGrid from './components/TomExperienceGrid';
 import TomFooterMarquee from './components/TomFooterMarquee';
 import NakitiBottomDock from './components/NakitiBottomDock';
@@ -31,7 +32,10 @@ export default function App() {
         {/* 3. Retro-Futuristic Curved Glass Monitor Project Showcase */}
         <TomCurvedShowcase />
 
-        {/* 4. Experience & Leadership History */}
+        {/* 4. Skhiladze-Inspired Interactive System Skills Ring & Masterclass */}
+        <SkhiladzeSkillRing />
+
+        {/* 5. Experience & Leadership History */}
         <TomExperienceGrid />
 
         {/* 5. Footer with 3D Extruded Centerpiece & Colossal Running Marquee */}
