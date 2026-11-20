@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Code, Download, Volume2, VolumeX, ArrowUp, Music } from 'lucide-react';
 import { soundEngine } from '../utils/audioEngine';
 import { FourRedDots } from './TomCornerHUD';
@@ -8,6 +8,16 @@ export default function NakitiBottomDock({ onToggleHUD, hudOpen }) {
   const [track, setTrack] = useState('pulse');
   const [showTrackSelect, setShowTrackSelect] = useState(false);
   const [toastMsg, setToastMsg] = useState('');
+
+  // Keep state synchronized with soundEngine
+  useEffect(() => {
+    const syncInterval = setInterval(() => {
+      if (soundEngine && soundEngine.isPlaying !== isPlaying) {
+        setIsPlaying(soundEngine.isPlaying);
+      }
+    }, 300);
+    return () => clearInterval(syncInterval);
+  }, [isPlaying]);
 
   const triggerToast = (msg) => {
     setToastMsg(msg);
@@ -87,30 +97,46 @@ export default function NakitiBottomDock({ onToggleHUD, hudOpen }) {
 
       {/* Capsule Dock Container matching exact screenshot design */}
       <div className="flex items-center space-x-2 sm:space-x-3 px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-full bg-[#161618]/90 hover:bg-[#1a1a1e]/95 backdrop-blur-2xl border border-white/[0.12] shadow-[0_20px_50px_rgba(0,0,0,0.85)] text-xs font-mono text-[#E7E1D7] transition-all">
-        {/* 1. Left Sound Indicator Pill with Glowing Border & Animated Bars */}
+        {/* 1. Website-Inspired Sound Bar Pill Button (5 orange bars / 5 gray dots with Sound on / Sound off) */}
         <button
           onClick={toggleSound}
-          className={`flex items-center justify-center px-3 py-1.5 rounded-full transition-all duration-300 active:scale-95 ${
+          className={`group flex items-center gap-2.5 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full transition-all duration-300 active:scale-95 select-none ${
             isPlaying
-              ? 'bg-[#F34213]/20 border border-[#F34213] shadow-[0_0_20px_rgba(243,66,19,0.45)] text-[#F34213]'
-              : 'bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] text-[#8E8B83]'
+              ? 'bg-[#1F2129] border border-white/[0.14] text-white shadow-[0_0_20px_rgba(251,94,39,0.22)]'
+              : 'bg-[#181A22] hover:bg-[#1F2129] border border-white/[0.08] hover:border-white/[0.14] text-[#9AA0AA]'
           }`}
           title={isPlaying ? 'Click to Mute background sound' : 'Click to Unmute & Play background soundscape'}
-          aria-label={isPlaying ? 'Mute sound' : 'Play sound'}
+          aria-label={isPlaying ? 'Sound on' : 'Sound off'}
         >
-          {isPlaying ? (
-            <div className="flex items-end space-x-0.5 h-3.5 w-3.5">
-              <span className="w-0.5 bg-[#F34213] rounded-full animate-[pulse_0.5s_ease-in-out_infinite] h-full" />
-              <span className="w-0.5 bg-[#F34213] rounded-full animate-[pulse_0.4s_ease-in-out_infinite_0.1s] h-2/3" />
-              <span className="w-0.5 bg-[#F34213] rounded-full animate-[pulse_0.7s_ease-in-out_infinite_0.2s] h-4/5" />
-            </div>
-          ) : (
-            <div className="flex items-end space-x-0.5 h-3.5 w-3.5 opacity-40">
-              <span className="w-0.5 bg-[#8E8B83] rounded-full h-1.5" />
-              <span className="w-0.5 bg-[#8E8B83] rounded-full h-2.5" />
-              <span className="w-0.5 bg-[#8E8B83] rounded-full h-1" />
-            </div>
-          )}
+          {/* 5 Equalizer Bars (animated orange when ON) / 5 Dots (muted gray when OFF) */}
+          <div className="flex items-center gap-[3px] h-5 w-[25px] justify-center">
+            {isPlaying ? (
+              <>
+                <span className="w-[3px] bg-[#FB5E27] rounded-full animate-eq-1" />
+                <span className="w-[3px] bg-[#FB5E27] rounded-full animate-eq-2" />
+                <span className="w-[3px] bg-[#FB5E27] rounded-full animate-eq-3" />
+                <span className="w-[3px] bg-[#FB5E27] rounded-full animate-eq-4" />
+                <span className="w-[3px] bg-[#FB5E27] rounded-full animate-eq-5" />
+              </>
+            ) : (
+              <>
+                <span className="w-[3px] h-[3px] rounded-full bg-[#9AA0AA]" />
+                <span className="w-[3px] h-[3px] rounded-full bg-[#9AA0AA]" />
+                <span className="w-[3px] h-[3px] rounded-full bg-[#9AA0AA]" />
+                <span className="w-[3px] h-[3px] rounded-full bg-[#9AA0AA]" />
+                <span className="w-[3px] h-[3px] rounded-full bg-[#9AA0AA]" />
+              </>
+            )}
+          </div>
+
+          {/* Clean Sans-Serif Text: Sound on / Sound off */}
+          <span
+            className={`text-[13px] sm:text-sm font-sans font-medium tracking-tight transition-colors ${
+              isPlaying ? 'text-white' : 'text-[#9AA0AA] group-hover:text-[#D1D5DB]'
+            }`}
+          >
+            {isPlaying ? 'Sound on' : 'Sound off'}
+          </span>
         </button>
 
         {/* 2. Music Note Button with 4 Red Dots & Track Menu Toggle */}
