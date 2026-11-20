@@ -22,7 +22,7 @@ export const portfolioData = {
 
   experience: [
     {
-      company: "Harman Connected Services",
+      company: "Connected Services Corporation Wipro India Private Limited (formerly Harman Connected Services Corporation India Pvt. Ltd.)",
       role: "Team Lead",
       period: "01/2023 – Present",
       location: "Pune, India",

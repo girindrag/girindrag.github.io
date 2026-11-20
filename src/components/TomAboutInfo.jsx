@@ -56,7 +56,7 @@ export default function TomAboutInfo() {
               I believe great infrastructure is like great architecture: invisible when it works, indestructible under stress. Over the last 8+ years, I've led engineering teams to automate complex Linux environments, orchestrate Docker containers on hardened Debian 11, and manage mission-critical clusters.
             </p>
             <p className="text-[#8E8B83]">
-              From running 24/7 offshore operations for India’s largest banking datacenter (SBI-ITFO) to architecting edge camera telemetry and Azure IoT gateways at Harman, my mission is simple: eliminate downtime, automate everything repetitive, and build systems that scale gracefully.
+              From running 24/7 offshore operations for India’s largest banking datacenter (SBI-ITFO) to architecting edge camera telemetry and Azure IoT gateways at Connected Services Corporation Wipro (formerly Harman), my mission is simple: eliminate downtime, automate everything repetitive, and build systems that scale gracefully.
             </p>
           </div>
 

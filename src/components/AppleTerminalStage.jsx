@@ -28,7 +28,7 @@ export default function AppleTerminalStage() {
   • whoami   - Profile overview and engineering summary
   • skills   - Technical stack: Docker, Kubernetes, Ansible, Azure IoT
   • projects - Key production systems and frameworks
-  • exp      - Career roles: Harman Connected Services, DXC Technology (SBI Data Center)
+  • exp      - Career roles: Connected Services Corp Wipro (formerly Harman), DXC Technology (SBI Data Center)
   • contact  - Direct contact methods & links
   • clear    - Clear terminal screen`
         });
@@ -69,7 +69,7 @@ Certifications: Microsoft Certified Azure Administrator Associate`
       case 'exp':
         newHistory.push({
           type: 'output',
-          text: `• Harman Connected Services (2023 - Present): Team Lead, IoT & Containers
+          text: `• Connected Services Corp Wipro (formerly Harman) (2023 - Present): Team Lead, IoT & Containers
 • DXC Technology (2021 - 2023): System Administration, SBI 24/7 Data Center`
         });
         break;

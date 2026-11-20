@@ -45,8 +45,17 @@ export default function TomExperienceGrid() {
                 )}
               </div>
 
-              <h3 className="font-display font-extrabold text-2xl sm:text-4xl uppercase tracking-tight text-[#E7E1D7] group-hover:text-[#F34213] transition-colors">
-                {exp.company}
+              <h3 className="font-display font-extrabold text-2xl sm:text-3xl md:text-4xl uppercase tracking-tight text-[#E7E1D7] group-hover:text-[#F34213] transition-colors leading-[1.15]">
+                {exp.company.includes('(formerly') ? (
+                  <>
+                    <span>{exp.company.split('(formerly')[0].trim()}</span>
+                    <span className="block text-xs sm:text-sm font-mono normal-case tracking-normal font-normal text-[#8E8B83] mt-1.5 text-white/60">
+                      (formerly{exp.company.split('(formerly')[1]}
+                    </span>
+                  </>
+                ) : (
+                  exp.company
+                )}
               </h3>
 
               <div className="text-sm font-mono text-[#8E8B83] flex items-center space-x-2">

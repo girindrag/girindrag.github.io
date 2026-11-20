@@ -78,7 +78,7 @@ Education: B.E. in Information Technology`
         newHistory.push({
           type: 'output',
           text: `[Career History]
-• Harman Connected Services (2023 - Present): Team Lead, IoT & Container Infrastructure
+• Connected Services Corp Wipro (formerly Harman) (2023 - Present): Team Lead, IoT & Container Infrastructure
 • DXC Technology (2021 - 2023): System Administration, SBI 24/7 Data Center (400+ servers)`
         });
         break;
