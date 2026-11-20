@@ -5,7 +5,7 @@ class AudioEngine {
   constructor() {
     this.ctx = null;
     this.isPlaying = false;
-    this.currentTrack = 'drift'; // 'drift' | 'pulse'
+    this.currentTrack = 'pulse'; // 'pulse' (default 01) | 'drift' (02)
     this.masterGain = null;
     this.oscillators = [];
     this.lfo = null;

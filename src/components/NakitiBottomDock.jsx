@@ -5,7 +5,7 @@ import { FourRedDots } from './TomCornerHUD';
 
 export default function NakitiBottomDock({ onToggleHUD, hudOpen }) {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [track, setTrack] = useState('drift');
+  const [track, setTrack] = useState('pulse');
   const [showTrackSelect, setShowTrackSelect] = useState(false);
   const [toastMsg, setToastMsg] = useState('');
 
@@ -61,17 +61,6 @@ export default function NakitiBottomDock({ onToggleHUD, hudOpen }) {
             <span className={`w-1.5 h-1.5 rounded-full ${isPlaying ? 'bg-[#F34213] animate-ping' : 'bg-[#8E8B83]'}`} />
           </div>
           <button
-            onClick={() => changeTrack('drift')}
-            className={`w-full text-left px-3 py-2 rounded-xl flex items-center justify-between transition-colors ${
-              track === 'drift'
-                ? 'bg-[#F34213] text-[#0B0B0B] font-bold'
-                : 'hover:bg-white/[0.08] text-[#E7E1D7]'
-            }`}
-          >
-            <span>01 · Drift (Lush Ambient)</span>
-            {track === 'drift' && <span className="w-1.5 h-1.5 rounded-full bg-[#0B0B0B]" />}
-          </button>
-          <button
             onClick={() => changeTrack('pulse')}
             className={`w-full text-left px-3 py-2 rounded-xl flex items-center justify-between transition-colors ${
               track === 'pulse'
@@ -79,8 +68,19 @@ export default function NakitiBottomDock({ onToggleHUD, hudOpen }) {
                 : 'hover:bg-white/[0.08] text-[#E7E1D7]'
             }`}
           >
-            <span>02 · Pulse (Synth Rhythm)</span>
+            <span>01 · Pulse (Synth Rhythm)</span>
             {track === 'pulse' && <span className="w-1.5 h-1.5 rounded-full bg-[#0B0B0B]" />}
+          </button>
+          <button
+            onClick={() => changeTrack('drift')}
+            className={`w-full text-left px-3 py-2 rounded-xl flex items-center justify-between transition-colors ${
+              track === 'drift'
+                ? 'bg-[#F34213] text-[#0B0B0B] font-bold'
+                : 'hover:bg-white/[0.08] text-[#E7E1D7]'
+            }`}
+          >
+            <span>02 · Drift (Lush Ambient)</span>
+            {track === 'drift' && <span className="w-1.5 h-1.5 rounded-full bg-[#0B0B0B]" />}
           </button>
         </div>
       )}
