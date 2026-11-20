@@ -1,68 +1,52 @@
 import React, { useState } from 'react';
-import NakitiParticleCanvas from './components/NakitiParticleCanvas';
-import NakitiNavbar from './components/NakitiNavbar';
-import NakitiFlyoutMenu from './components/NakitiFlyoutMenu';
-import NakitiHero from './components/NakitiHero';
-import NakitiNarrativeStats from './components/NakitiNarrativeStats';
-import NakitiServicesCream from './components/NakitiServicesCream';
-import NakitiSelectedWork from './components/NakitiSelectedWork';
-import NakitiExperienceTimeline from './components/NakitiExperienceTimeline';
+import TomCornerHUD from './components/TomCornerHUD';
+import TomHero from './components/TomHero';
+import TomAboutInfo from './components/TomAboutInfo';
+import TomCurvedShowcase from './components/TomCurvedShowcase';
+import TomExperienceGrid from './components/TomExperienceGrid';
 import NakitiAskAI from './components/NakitiAskAI';
-import NakitiContactFooter from './components/NakitiContactFooter';
+import TomFooterMarquee from './components/TomFooterMarquee';
 import NakitiBottomDock from './components/NakitiBottomDock';
 import NakitiCodeInspectorModal from './components/NakitiCodeInspectorModal';
 
 export default function App() {
-  const [menuOpen, setMenuOpen] = useState(false);
   const [hudOpen, setHudOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-[#070709] text-[#f4f4f6] font-sans relative selection:bg-[#5865f2] selection:text-white noise-bg">
-      {/* 3D / 2D Canvas Interactive Particles */}
-      <NakitiParticleCanvas />
+    <div className="min-h-screen bg-[#0B0B0B] text-[#E7E1D7] font-sans relative selection:bg-[#F34213] selection:text-[#0B0B0B] overflow-x-hidden">
+      {/* Floating Corner HUD (Top-Left 'g.' Monogram + Top-Right 'MENU' Pill) */}
+      <TomCornerHUD />
 
-      {/* Top Navigation Bar with Pune Clock & Menu */}
-      <NakitiNavbar 
-        onOpenMenu={() => setMenuOpen(true)} 
-      />
-
-      {/* Full-Screen Flyout Editorial Menu */}
-      <NakitiFlyoutMenu 
-        isOpen={menuOpen} 
-        onClose={() => setMenuOpen(false)} 
-      />
-
-      {/* Main Sections */}
+      {/* Main Page Content */}
       <main className="relative z-10">
-        {/* 1. Hero with Status, Massive Headline & Lat/Long Coordinates */}
-        <NakitiHero />
+        {/* 1. Hero with Context Status Bar & Massive Typography */}
+        <TomHero />
 
-        {/* 2. Philosophy Narrative & 4-Metric Stats Grid */}
-        <NakitiNarrativeStats />
+        {/* 2. 2-Column Editorial About & Metadata Grid with Vermillion CTA */}
+        <TomAboutInfo />
 
-        {/* 3. "What I Do" (Alternating Warm Porcelain/Cream Section) */}
-        <NakitiServicesCream />
+        {/* 3. Retro-Futuristic Curved Glass Monitor Project Showcase */}
+        <TomCurvedShowcase />
 
-        {/* 4. Selected Work (Stacked Cards with Electric Indigo Hover Inversion) */}
-        <NakitiSelectedWork />
+        {/* 4. Experience & Leadership History */}
+        <TomExperienceGrid />
 
-        {/* 5. Career Scale Timeline & Infinite Toolkit Marquee */}
-        <NakitiExperienceTimeline />
+        {/* 5. Interactive AI Assistant */}
+        <div className="py-12 border-t border-[#E7E1D7]/[0.1]">
+          <NakitiAskAI />
+        </div>
 
-        {/* 6. Ask Girindra's AI (Interactive Assistant) */}
-        <NakitiAskAI />
-
-        {/* 7. Engagement, 3-Step Process & Giant Circular CTA Footer */}
-        <NakitiContactFooter />
+        {/* 6. Footer with 3D Extruded Centerpiece & Colossal Running Marquee */}
+        <TomFooterMarquee />
       </main>
 
-      {/* Floating Bottom Dock (HUD, AI, Resume, Top) */}
+      {/* Floating Bottom Control Dock (Sound Engine, Code HUD, Resume, Top) */}
       <NakitiBottomDock 
         onToggleHUD={() => setHudOpen((prev) => !prev)}
         hudOpen={hudOpen}
       />
 
-      {/* Live Developer HUD (Core Web Vitals & Runtime) */}
+      {/* Live Developer Runtime HUD */}
       <NakitiCodeInspectorModal 
         isOpen={hudOpen} 
         onClose={() => setHudOpen(false)} 

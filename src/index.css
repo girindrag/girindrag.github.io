@@ -11,89 +11,87 @@
 
   html {
     scroll-behavior: smooth;
+    background-color: #0B0B0B;
   }
 
   body {
     margin: 0;
     padding: 0;
+    background-color: #0B0B0B;
+    color: #E7E1D7;
     overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: #F34213;
+    color: #0B0B0B;
   }
 }
 
-/* Custom Inacio Nakiti scrollbars */
+/* The Signature Tom de Koning Serif Italic 'O' */
+.playfair-o {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-style: italic !important;
+  font-weight: 400 !important;
+}
+
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #070709;
+  background: #0B0B0B;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #232328;
+  background: #262626;
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #5865f2;
+  background: #F34213;
 }
 
-/* Editorial hairline borders */
-.hairline-b {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+/* Glassmorphism corner badges */
+.tom-glass {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.hairline-t {
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+.tom-glass-elevated {
+  background: rgba(20, 20, 20, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(231, 225, 215, 0.12);
 }
 
-.hairline-r {
-  border-right: 1px solid rgba(255, 255, 255, 0.08);
+/* Ambient bottom glow */
+.tom-glow-bottom {
+  background: radial-gradient(ellipse 80% 50% at 50% 100%, rgba(243, 66, 19, 0.22) 0%, transparent 70%);
 }
 
-.hairline-l {
-  border-left: 1px solid rgba(255, 255, 255, 0.08);
+.tom-glow-center {
+  background: radial-gradient(ellipse 60% 40% at 50% 50%, rgba(243, 66, 19, 0.08) 0%, transparent 70%);
 }
 
-/* Nakiti Project Card Inversion Effect */
-.nakiti-project-card {
+/* Button hover transitions */
+.tom-pill-cta {
+  background-color: #F34213;
+  color: #0B0B0B;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.nakiti-project-card:hover {
-  background-color: #5865f2 !important;
-  color: #070709 !important;
-  border-color: #5865f2 !important;
-  transform: translateY(-3px);
+.tom-pill-cta:hover {
+  background-color: #ffffff;
+  color: #0B0B0B;
+  transform: scale(1.03);
 }
 
-.nakiti-project-card:hover .project-invert-text {
-  color: #070709 !important;
-}
-
-.nakiti-project-card:hover .project-invert-muted {
-  color: #1a1a24 !important;
-}
-
-.nakiti-project-card:hover .project-invert-tag {
-  background-color: #070709 !important;
-  color: #ffffff !important;
-  border-color: #070709 !important;
-}
-
-.nakiti-project-card:hover .project-arrow-icon {
-  transform: translate(3px, -3px) rotate(45deg);
-  color: #070709 !important;
-}
-
-/* Marquee infinite scroll container */
-.marquee-track {
-  display: flex;
-  width: max-content;
-}
-
-/* Subtle background noise texture */
-.noise-bg {
-  background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 24px 24px;
+/* Subtle CRT scanline effect on 3D monitor */
+.crt-overlay {
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  background-size: 100% 4px, 6px 100%;
 }

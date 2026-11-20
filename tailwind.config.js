@@ -9,25 +9,24 @@ export default {
     extend: {
       fontFamily: {
         sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'sans-serif'],
-        display: ['"Space Grotesk"', '"Plus Jakarta Sans"', 'sans-serif'],
-        mono: ['"JetBrains Mono"', 'Menlo', 'Monaco', 'monospace'],
+        display: ['Syne', '"Space Grotesk"', 'sans-serif'],
+        serif: ['"Playfair Display"', 'Georgia', 'serif'],
+        mono: ['"JetBrains Mono"', 'Menlo', 'monospace'],
       },
       colors: {
-        nakiti: {
-          dark: '#070709',
-          card: '#0f0f13',
-          border: 'rgba(255, 255, 255, 0.08)',
-          cream: '#f5f2eb',
-          'cream-card': '#ece7dc',
-          'cream-text': '#121214',
-          accent: '#5865f2',
-          periwinkle: '#6c72ff',
-          mint: '#10b981',
+        tom: {
+          dark: '#0B0B0B',
+          cream: '#E7E1D7',
+          vermillion: '#F34213',
+          muted: '#8E8B83',
+          border: 'rgba(231, 225, 215, 0.12)',
+          card: '#121212',
+          surface: '#181818',
         }
       },
       animation: {
-        'marquee': 'marquee 25s linear infinite',
-        'marquee-reverse': 'marquee-reverse 25s linear infinite',
+        'marquee': 'marquee 30s linear infinite',
+        'marquee-reverse': 'marquee-reverse 30s linear infinite',
         'pulse-glow': 'pulseGlow 2.5s ease-in-out infinite',
       },
       keyframes: {
