@@ -153,23 +153,17 @@ export default function NakitiBottomDock({ onToggleHUD, hudOpen }) {
         {/* Vertical Divider */}
         <span className="h-4 w-px bg-white/[0.14]" />
 
-        {/* 4. Resume Download Button in Standout Luxury Style */}
+        {/* 4. Resume Button linking to clean resume page */}
         <a
-          href="./Girindra_Mohan_Resume.pdf"
-          download="Girindra_Mohan_Resume.pdf"
+          href="./resume.html"
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => soundEngine.playClick()}
-          className="group relative px-4 py-1.5 rounded-full bg-[#242428] hover:bg-[#2e2e33] border border-white/[0.14] hover:border-[#F34213]/60 text-[#E7E1D7] hover:text-white transition-all duration-200 flex items-center space-x-2 font-mono text-xs font-medium shadow-[0_4px_12px_rgba(0,0,0,0.5)] active:scale-95"
-          title="Download Official Resume PDF (Girindra Mohan)"
+          className="group relative px-4 py-1.5 rounded-full bg-[#242428] hover:bg-[#2e2e33] border border-white/[0.14] hover:border-[#F34213]/40 text-[#E7E1D7] hover:text-white transition-all duration-200 flex items-center space-x-2 font-mono text-xs font-medium shadow-[0_4px_12px_rgba(0,0,0,0.5)] active:scale-95"
+          title="View Official Resume (Aakriti Gupta style layout with PDF download)"
         >
-          {/* Subtle 4 Red Dots badge */}
-          <div className="w-2.5 h-2.5 grid grid-cols-2 gap-0.5 shrink-0 opacity-80 group-hover:opacity-100 transition-opacity">
-            <span className="w-1 h-1 rounded-full bg-[#F34213]" />
-            <span className="w-1 h-1 rounded-full bg-[#F34213]" />
-            <span className="w-1 h-1 rounded-full bg-[#F34213]" />
-            <span className="w-1 h-1 rounded-full bg-[#F34213]" />
-          </div>
+          {/* Subtle minimal single red accent dot */}
+          <span className="w-1.5 h-1.5 rounded-full bg-[#F34213] shrink-0" />
           <Download className="w-3.5 h-3.5 text-[#E7E1D7] group-hover:text-[#F34213] group-hover:translate-y-0.5 transition-all duration-200" />
           <span className="tracking-wide">Resume</span>
         </a>

@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Girindra Mohan — Resume</title>
+  <meta name="description" content="Resume of Girindra Mohan — Cloud & IoT Engineer / Team Lead" />
+
+  <!-- Website Matching Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 14px;
+      line-height: 1.55;
+      color: #1a1a1a;
+      background: #faf9f7;
+      padding: 40px 20px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Top Floating Utility Bar (Hidden when printed) */
+    .top-bar {
+      max-width: 860px;
+      margin: 0 auto 16px auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+    }
+
+    .top-bar a, .top-bar button {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 14px;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: inherit;
+      font-weight: 500;
+      text-decoration: none;
+      cursor: pointer;
+      background: #ffffff;
+      color: #374151;
+      border: 1px solid #d1d5db;
+      transition: all 0.15s ease;
+    }
+
+    .top-bar a:hover, .top-bar button:hover {
+      background: #f3f4f6;
+      color: #111827;
+      border-color: #9ca3af;
+    }
+
+    .top-bar .btn-download {
+      background: #111827;
+      color: #ffffff;
+      border-color: #111827;
+    }
+
+    .top-bar .btn-download:hover {
+      background: #27272a;
+    }
+
+    /* Main Resume Document Canvas */
+    .resume-container {
+      background: #ffffff;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 48px 60px;
+      border: 1px solid #e5e7eb;
+      border-radius: 6px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    }
+
+    /* ── Header ─────────────────────────────────────────── */
+    header {
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: #111111;
+      letter-spacing: -0.5px;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Very subtle red accent dot */
+    .red-dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #F34213;
+      margin-top: 4px;
+    }
+
+    .subtitle {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 14px;
+      color: #1f2937;
+      font-weight: 600;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .subtitle span.meta {
+      color: #4b5563;
+      font-weight: 400;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .contacts {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: #374151;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px 0;
+      align-items: center;
+    }
+
+    .contacts a {
+      color: #374151;
+      text-decoration: none;
+    }
+
+    .contacts a:hover {
+      text-decoration: underline;
+      color: #111111;
+    }
+
+    .sep {
+      margin: 0 8px;
+      color: #9ca3af;
+    }
+
+    /* ── Sections ────────────────────────────────────────── */
+    section {
+      margin-bottom: 22px;
+    }
+
+    h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      color: #111111;
+      border-bottom: 1px solid #d1d5db;
+      padding-bottom: 4px;
+      margin-bottom: 12px;
+    }
+
+    /* ── Summary ─────────────────────────────────────────── */
+    .summary p {
+      font-size: 13.5px;
+      line-height: 1.6;
+      margin-bottom: 8px;
+      color: #1a1a1a;
+      text-align: justify;
+    }
+
+    .summary p:last-child {
+      margin-bottom: 0;
+    }
+
+    .summary strong {
+      font-weight: 600;
+      color: #111111;
+    }
+
+    /* ── Experience ──────────────────────────────────────── */
+    .job {
+      margin-bottom: 20px;
+    }
+
+    .job:last-child {
+      margin-bottom: 0;
+    }
+
+    .job-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 14.5px;
+      font-weight: 700;
+      color: #111111;
+      margin-bottom: 2px;
+    }
+
+    .job-meta {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 12.5px;
+      color: #4b5563;
+      margin-bottom: 8px;
+    }
+
+    .job-meta .company {
+      color: #111827;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .sub-heading {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      color: #374151;
+      margin: 10px 0 4px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      font-size: 13.5px;
+      line-height: 1.55;
+      padding-left: 16px;
+      position: relative;
+      margin-bottom: 6px;
+      color: #1a1a1a;
+    }
+
+    ul li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: #6b7280;
+    }
+
+    ul li strong {
+      font-weight: 600;
+      color: #111111;
+    }
+
+    /* ── Education & Certifications ──────────────────────── */
+    .edu-entry {
+      margin-bottom: 10px;
+    }
+
+    .edu-degree {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #111111;
+    }
+
+    .edu-detail {
+      font-size: 13px;
+      color: #4b5563;
+    }
+
+    /* ── Print Media Optimization ───────────────────────── */
+    @media print {
+      body {
+        background: #ffffff !important;
+        padding: 0 !important;
+      }
+
+      .no-print {
+        display: none !important;
+      }
+
+      .resume-container {
+        border: none !important;
+        box-shadow: none !important;
+        padding: 24px 32px !important;
+        max-width: 100% !important;
+      }
+
+      h1 { font-size: 26px; }
+      h2 { margin-bottom: 8px; }
+      .job { margin-bottom: 14px; }
+      ul li { margin-bottom: 3px; }
+      section { margin-bottom: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Utility Bar (Non-printed) -->
+  <div class="top-bar no-print">
+    <a href="./">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+      <span>Back to Portfolio</span>
+    </a>
+    <div style="display: flex; gap: 8px;">
+      <button onclick="window.print()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+        <span>Print</span>
+      </button>
+      <a href="./Girindra_Mohan_Resume.pdf" download="Girindra_Mohan_Resume.pdf" class="btn-download">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+        <span>Download PDF</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Document Sheet -->
+  <div class="resume-container">
+
+    <!-- Header -->
+    <header>
+      <h1>
+        <span>Girindra Mohan</span>
+        <span class="red-dot" title="Available for Senior & Lead Roles"></span>
+      </h1>
+      <p class="subtitle">
+        <span class="company">Team Lead &amp; Cloud/IoT Engineer</span>
+        <span class="meta">· Pune, India (Available for Senior &amp; Lead Roles)</span>
+      </p>
+      <div class="contacts">
+        <a href="mailto:iamgirindra@gmail.com">iamgirindra@gmail.com</a>
+        <span class="sep">|</span>
+        <a href="tel:+919595066233">+91 9595066233</a>
+        <span class="sep">|</span>
+        <a href="https://linkedin.com/in/girindrag" target="_blank" rel="noopener noreferrer">linkedin.com/in/girindrag</a>
+        <span class="sep">|</span>
+        <a href="https://github.com/girindrag" target="_blank" rel="noopener noreferrer">github.com/girindrag</a>
+        <span class="sep">|</span>
+        <a href="https://girindrag.github.io/" target="_blank" rel="noopener noreferrer">girindrag.github.io</a>
+      </div>
+    </header>
+
+    <!-- Summary -->
+    <section>
+      <h2>Summary</h2>
+      <div class="summary">
+        <p>
+          I am an innovative <strong>Team Lead and Cloud/IoT Engineer</strong> with 8+ years of comprehensive expertise in system administration, Docker containerization, Linux engineering, Ansible automation, and edge IoT architectures. Proven track record managing 400+ physical and virtual servers for mission-critical enterprise environments including India’s largest core banking datacenter (State Bank of India — SBI-ITFO) and connected vehicle edge deployments at Harman Connected Services.
+        </p>
+        <p>
+          Experienced in hardening Debian 11 operating systems, provisioning IoT edge hardware, architecting automated CI/CD pipelines, and authoring infrastructure automation with Shell, Python, and Ansible. Dedicated to building resilient, self-healing infrastructure that eliminates downtime and scales gracefully under heavy production pressure.
+        </p>
+        <p style="margin-top: 10px;">
+          <strong>Technical stack:</strong> Linux (Debian 11, RHEL, HP-UX), Docker, Kubernetes, Ansible, Azure IoT Hub, Shell / Bash, Python, Git, CI/CD Pipelines, ASM Disk Groups, Terraform.
+        </p>
+      </div>
+    </section>
+
+    <!-- Work Experience -->
+    <section>
+      <h2>Work Experience</h2>
+
+      <!-- Harman -->
+      <div class="job">
+        <div class="job-title">Team Lead — Cloud &amp; IoT Engineering</div>
+        <div class="job-meta">
+          <span class="company">Harman Connected Services</span> | 01/2023 – Present | Pune, India
+        </div>
+        <ul>
+          <li><strong>IoT Edge Provisioning &amp; Automation:</strong> Manage day-to-day operations with Docker, Linux, and Ansible to configure, provision, and deploy edge IoT devices for production rollouts.</li>
+          <li><strong>Debian 11 Optimization:</strong> Install, benchmark, and optimize Debian 11 operating systems for high-performance containerized microservices, maximizing uptime and reliability.</li>
+          <li><strong>Automated CI/CD Delivery:</strong> Implement automated deployment scripts and release pipelines to eliminate manual overhead and streamline testing across environments.</li>
+          <li><strong>Proactive Telemetry:</strong> Establish continuous system health monitoring and real-time telemetry to preemptively detect, diagnose, and resolve hardware and network issues.</li>
+          <li><strong>Cross-Functional Leadership:</strong> Lead team troubleshooting efforts, integrate camera streaming feeds (SlumberJS), and coordinate device telemetry with Azure IoT services.</li>
+        </ul>
+      </div>
+
+      <!-- DXC Technology -->
+      <div class="job">
+        <div class="job-title">System Administrator — Enterprise Datacenter Operations</div>
+        <div class="job-meta">
+          <span class="company">DXC Technology</span> | 08/2021 – 01/2023 | Navi Mumbai, India
+        </div>
+        <ul>
+          <li><strong>State Bank of India Datacenter (SBI-ITFO):</strong> Provided 24/7 mission-critical infrastructure operations support for India’s premier core banking platform.</li>
+          <li><strong>400+ Enterprise Servers:</strong> Managed and administered 400+ physical and virtual enterprise servers hosted on HP Blade (BL860/870/890) and HP Superdome architectures.</li>
+          <li><strong>10x Scalability:</strong> Assisted in scaling server infrastructure to accommodate a 10-fold customer and transaction surge with zero unplanned downtime.</li>
+          <li><strong>Unix/Linux Administration:</strong> Administered and fine-tuned HP-UX and Red Hat Enterprise Linux (RHEL) systems; handled kernel tuning, patch management, and server hardening.</li>
+          <li><strong>Automation Scripting:</strong> Engineered automated operational scripts using Shell, Python, and Ansible, reducing recurring support tickets and operational latency.</li>
+          <li><strong>Storage &amp; Volume Management:</strong> Administered Oracle ASM disk groups (creation, disk addition, rebalancing, deletion) and maintained strict SLAs.</li>
+        </ul>
+      </div>
+
+      <!-- Genex -->
+      <div class="job">
+        <div class="job-title">System Administrator — Linux &amp; IoT Infrastructure</div>
+        <div class="job-meta">
+          <span class="company">Genex Corporate Services</span> | 11/2020 – 08/2021 | Navi Mumbai, India
+        </div>
+        <ul>
+          <li><strong>Server Management:</strong> Maintained and troubleshot Linux and Windows server environments supporting client IoT hardware deployments at SlumberJS.</li>
+          <li><strong>Azure IoT Telemetry:</strong> Leveraged Azure IoT services for device telemetry, automated provisioning, and fleet management.</li>
+          <li><strong>Containerization:</strong> Authored optimized multi-stage container images with Dockerfile and coordinated containerized workloads with Kubernetes.</li>
+          <li><strong>CI/CD &amp; Version Control:</strong> Supported CI/CD deployment pipelines, managed Git repositories, and integrated camera API endpoints.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section>
+      <h2>Education</h2>
+      <div class="edu-entry">
+        <div class="edu-degree">Bachelor of Engineering (B.E.) in Information Technology</div>
+        <div class="edu-detail">Indira College of Engineering and Computer Management, Pune University | Graduated 2016</div>
+      </div>
+    </section>
+
+    <!-- Certifications -->
+    <section>
+      <h2>Certifications</h2>
+      <div class="edu-entry">
+        <div class="edu-degree">Microsoft Certified: Azure Administrator Associate (AZ-104)</div>
+        <div class="edu-detail">Microsoft | Issued 09/2021 – 09/2022</div>
+      </div>
+    </section>
+
+  </div>
+
+</body>
+</html>

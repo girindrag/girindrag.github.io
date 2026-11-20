@@ -73,14 +73,15 @@ export default function TomAboutInfo() {
             </a>
 
             <a
-              href="./Girindra_Mohan_Resume.pdf"
-              download
+              href="./resume.html"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-8 py-4 rounded-full tom-glass hover:bg-white/[0.12] text-[#E7E1D7] font-display font-extrabold text-xs sm:text-sm uppercase tracking-widest transition-all duration-300 flex items-center space-x-2"
             >
               <span>
-                RES<span className="playfair-o">U</span>ME (PDF)
+                RES<span className="playfair-o">U</span>ME
               </span>
-              <Download className="w-3.5 h-3.5 text-[#F34213]" />
+              <span className="text-sm">↗</span>
             </a>
           </div>
         </div>

@@ -151,12 +151,13 @@ export default function TomCornerHUD() {
                 <ArrowUpRight className="w-3.5 h-3.5 text-[#F34213]" />
               </a>
               <a
-                href="./Girindra_Mohan_Resume.pdf"
-                download
+                href="./resume.html"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="hover:text-[#E7E1D7] flex items-center space-x-1 text-[#F34213]"
               >
-                <Download className="w-3.5 h-3.5" />
                 <span>RESUME</span>
+                <ArrowUpRight className="w-3.5 h-3.5 text-[#F34213]" />
               </a>
             </div>
 
