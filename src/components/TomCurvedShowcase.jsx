@@ -55,7 +55,11 @@ export default function TomCurvedShowcase() {
       </div>
 
       {/* Main 3D Curved Glass Container Showcase */}
-      <div className="relative rounded-3xl tom-glass-elevated border border-[#E7E1D7]/[0.15] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.8)]">
+      <div 
+        className="relative rounded-3xl tom-glass-elevated border border-[#E7E1D7]/[0.15] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.8)] project-card"
+        data-cursor="view"
+        data-cursor-text="Explore"
+      >
         {/* Curved Glass Top Status Line */}
         <div className="px-6 py-4 bg-white/[0.03] border-b border-[#E7E1D7]/[0.1] flex items-center justify-between text-xs font-mono tracking-widest uppercase text-[#8E8B83]">
           <div className="flex items-center space-x-2">

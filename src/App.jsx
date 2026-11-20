@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import CustomCursor from './components/CustomCursor';
 import TomCornerHUD from './components/TomCornerHUD';
 import TomHero from './components/TomHero';
 import TomAboutInfo from './components/TomAboutInfo';
@@ -13,6 +14,9 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#0B0B0B] text-[#E7E1D7] font-sans relative selection:bg-[#F34213] selection:text-[#0B0B0B] overflow-x-hidden">
+      {/* Skhiladze-Inspired Interactive Custom Cursor & Spotlight */}
+      <CustomCursor />
+
       {/* Floating Corner HUD (Top-Left 'g.' Monogram + Top-Right 'MENU' with 4 Red Dots Animation) */}
       <TomCornerHUD />
 
