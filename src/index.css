@@ -9,78 +9,97 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
+  html.dark {
+    background-color: #000000;
+    color: #f5f5f7;
+    color-scheme: dark;
+  }
+
+  html:not(.dark) {
+    background-color: #fbfbfd;
+    color: #1d1d1f;
+    color-scheme: light;
+  }
+
   body {
-    user-select: none;
-    -webkit-user-select: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
-    height: 100vh;
-    width: 100vw;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 }
 
-/* Custom Mac-style scrollbars */
+/* Custom Apple scrollbars */
 ::-webkit-scrollbar {
   width: 8px;
-  height: 8px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #000000;
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: #fbfbfd;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #333336;
+  border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.18);
+  background: #d2d2d7;
   border-radius: 9999px;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.35);
+/* Apple typography helpers */
+.dark .text-apple-subheadline {
+  color: #86868b;
 }
 
-/* Traffic light button hover effects */
-.traffic-btn {
-  width: 12px;
-  height: 12px;
-  border-radius: 9999px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  transition: opacity 0.15s ease;
+.text-apple-subheadline {
+  color: #6e6e73;
 }
 
-.traffic-btn svg {
-  opacity: 0;
-  transition: opacity 0.15s ease;
+.dark .apple-gradient-text {
+  background: linear-gradient(180deg, #ffffff 0%, #a1a1a6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.window-header:hover .traffic-btn svg {
-  opacity: 0.6;
+.apple-gradient-text {
+  background: linear-gradient(180deg, #1d1d1f 0%, #434344 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* Dock bouncing animation */
-@keyframes dockBounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-14px); }
+.apple-card {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
-.dock-bounce {
-  animation: dockBounce 0.5s ease;
+.dark .apple-card {
+  background-color: #161617;
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* Glassmorphism helpers */
-.mac-glass {
-  background: rgba(30, 32, 40, 0.75);
-  backdrop-filter: blur(28px) saturate(190%);
-  -webkit-backdrop-filter: blur(28px) saturate(190%);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+.dark .apple-card:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
 }
 
-.mac-glass-light {
-  background: rgba(245, 245, 247, 0.8);
-  backdrop-filter: blur(28px) saturate(190%);
-  -webkit-backdrop-filter: blur(28px) saturate(190%);
-  border: 1px solid rgba(0, 0, 0, 0.08);
+html:not(.dark) .apple-card {
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+html:not(.dark) .apple-card:hover {
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
 }
