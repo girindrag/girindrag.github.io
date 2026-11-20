@@ -4,7 +4,6 @@ import TomHero from './components/TomHero';
 import TomAboutInfo from './components/TomAboutInfo';
 import TomCurvedShowcase from './components/TomCurvedShowcase';
 import TomExperienceGrid from './components/TomExperienceGrid';
-import NakitiAskAI from './components/NakitiAskAI';
 import TomFooterMarquee from './components/TomFooterMarquee';
 import NakitiBottomDock from './components/NakitiBottomDock';
 import NakitiCodeInspectorModal from './components/NakitiCodeInspectorModal';
@@ -14,7 +13,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#0B0B0B] text-[#E7E1D7] font-sans relative selection:bg-[#F34213] selection:text-[#0B0B0B] overflow-x-hidden">
-      {/* Floating Corner HUD (Top-Left 'g.' Monogram + Top-Right 'MENU' Pill) */}
+      {/* Floating Corner HUD (Top-Left 'g.' Monogram + Top-Right 'MENU' with 4 Red Dots Animation) */}
       <TomCornerHUD />
 
       {/* Main Page Content */}
@@ -31,12 +30,7 @@ export default function App() {
         {/* 4. Experience & Leadership History */}
         <TomExperienceGrid />
 
-        {/* 5. Interactive AI Assistant */}
-        <div className="py-12 border-t border-[#E7E1D7]/[0.1]">
-          <NakitiAskAI />
-        </div>
-
-        {/* 6. Footer with 3D Extruded Centerpiece & Colossal Running Marquee */}
+        {/* 5. Footer with 3D Extruded Centerpiece & Colossal Running Marquee */}
         <TomFooterMarquee />
       </main>
 

@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Code, Download, Bot, Volume2, VolumeX, ArrowUp, Music } from 'lucide-react';
+import React, { useState } from 'react';
+import { Code, Download, VolumeX, ArrowUp, Music } from 'lucide-react';
 import { soundEngine } from '../utils/audioEngine';
 
 export default function NakitiBottomDock({ onToggleHUD, hudOpen }) {
@@ -27,20 +27,20 @@ export default function NakitiBottomDock({ onToggleHUD, hudOpen }) {
           <button
             onClick={() => changeTrack('drift')}
             className={`w-full text-left px-2.5 py-1.5 rounded-lg flex items-center justify-between transition-colors ${
-              track === 'drift' ? 'bg-[#5865f2] text-white' : 'hover:bg-white/[0.08] hover:text-white'
+              track === 'drift' ? 'bg-[#F34213] text-[#0B0B0B] font-bold' : 'hover:bg-white/[0.08] hover:text-white'
             }`}
           >
             <span>01 · Drift (Drone)</span>
-            {track === 'drift' && <span className="w-1.5 h-1.5 rounded-full bg-white" />}
+            {track === 'drift' && <span className="w-1.5 h-1.5 rounded-full bg-[#0B0B0B]" />}
           </button>
           <button
             onClick={() => changeTrack('pulse')}
             className={`w-full text-left px-2.5 py-1.5 rounded-lg flex items-center justify-between transition-colors ${
-              track === 'pulse' ? 'bg-[#5865f2] text-white' : 'hover:bg-white/[0.08] hover:text-white'
+              track === 'pulse' ? 'bg-[#F34213] text-[#0B0B0B] font-bold' : 'hover:bg-white/[0.08] hover:text-white'
             }`}
           >
             <span>02 · Pulse (Synth)</span>
-            {track === 'pulse' && <span className="w-1.5 h-1.5 rounded-full bg-white" />}
+            {track === 'pulse' && <span className="w-1.5 h-1.5 rounded-full bg-[#0B0B0B]" />}
           </button>
         </div>
       )}
@@ -52,16 +52,16 @@ export default function NakitiBottomDock({ onToggleHUD, hudOpen }) {
             onClick={toggleSound}
             className={`flex items-center space-x-2 px-3 py-1.5 rounded-full transition-all ${
               isPlaying
-                ? 'bg-[#5865f2]/20 text-white border border-[#5865f2]/50 shadow-[0_0_15px_rgba(88,101,242,0.3)]'
+                ? 'bg-[#F34213]/20 text-white border border-[#F34213]/50 shadow-[0_0_15px_rgba(243,66,19,0.3)]'
                 : 'hover:bg-white/[0.08] hover:text-white'
             }`}
             title={isPlaying ? 'Mute ambient soundscape' : 'Play ambient soundscape (Drift & Pulse)'}
           >
             {isPlaying ? (
               <div className="flex items-end space-x-0.5 h-3 w-3">
-                <span className="w-0.5 bg-[#5865f2] rounded-full animate-[pulse_0.6s_ease-in-out_infinite] h-full" />
-                <span className="w-0.5 bg-[#5865f2] rounded-full animate-[pulse_0.4s_ease-in-out_infinite_0.1s] h-2/3" />
-                <span className="w-0.5 bg-[#5865f2] rounded-full animate-[pulse_0.8s_ease-in-out_infinite_0.2s] h-4/5" />
+                <span className="w-0.5 bg-[#F34213] rounded-full animate-[pulse_0.6s_ease-in-out_infinite] h-full" />
+                <span className="w-0.5 bg-[#F34213] rounded-full animate-[pulse_0.4s_ease-in-out_infinite_0.1s] h-2/3" />
+                <span className="w-0.5 bg-[#F34213] rounded-full animate-[pulse_0.8s_ease-in-out_infinite_0.2s] h-4/5" />
               </div>
             ) : (
               <VolumeX className="w-3.5 h-3.5 text-white/50" />
@@ -78,7 +78,7 @@ export default function NakitiBottomDock({ onToggleHUD, hudOpen }) {
               className="p-1 rounded-full hover:bg-white/[0.08] text-white/60 hover:text-white transition-colors"
               title="Change soundtrack (Drift / Pulse)"
             >
-              <Music className="w-3 h-3 text-[#5865f2]" />
+              <Music className="w-3 h-3 text-[#F34213]" />
             </button>
           )}
         </div>
@@ -90,7 +90,7 @@ export default function NakitiBottomDock({ onToggleHUD, hudOpen }) {
           onClick={onToggleHUD}
           className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-full transition-all ${
             hudOpen
-              ? 'bg-[#5865f2] text-white shadow-[0_0_15px_rgba(88,101,242,0.5)]'
+              ? 'bg-[#F34213] text-[#0B0B0B] font-bold shadow-[0_0_15px_rgba(243,66,19,0.5)]'
               : 'hover:bg-white/[0.08] hover:text-white'
           }`}
           title="Show Web Vitals & System HUD"
@@ -98,17 +98,6 @@ export default function NakitiBottomDock({ onToggleHUD, hudOpen }) {
           <Code className="w-3.5 h-3.5" />
           <span className="hidden xs:inline">&lt;/&gt; Code</span>
         </button>
-
-        <span className="text-white/20">|</span>
-
-        {/* Ask AI Jump */}
-        <a
-          href="#ai"
-          className="flex items-center space-x-1.5 px-3 py-1.5 rounded-full hover:bg-white/[0.08] hover:text-white transition-colors"
-        >
-          <Bot className="w-3.5 h-3.5 text-[#5865f2]" />
-          <span>Ask AI</span>
-        </a>
 
         <span className="text-white/20">|</span>
 
