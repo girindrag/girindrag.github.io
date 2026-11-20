@@ -46,17 +46,43 @@ export default function TomHero() {
         </div>
       </div>
 
-      {/* Main Massive Kinetic Brand Title with Continuous Running Marquee Animation */}
-      <div className="my-auto py-8 sm:py-14 -mx-5 sm:-mx-12 overflow-hidden select-none border-y border-[#E7E1D7]/[0.08] my-4 sm:my-8 bg-[#0B0B0B]/30">
+      {/* 3-Stacked Kinetic Brand Marquee: Girindra / Mohan / .Work */}
+      <div className="my-auto py-6 sm:py-8 -mx-5 sm:-mx-12 overflow-hidden select-none border-y border-[#E7E1D7]/[0.08] my-4 sm:my-6 bg-[#0B0B0B]/30 space-y-1 sm:space-y-2">
+        {/* Line 1: Girindra */}
         <div className="flex animate-marquee whitespace-nowrap will-change-transform">
           {[...Array(8)].map((_, i) => (
             <h1
               key={i}
-              className="font-display font-extrabold text-6xl sm:text-8xl md:text-9xl lg:text-[10.5rem] tracking-tight uppercase leading-[0.9] text-[#E7E1D7] mx-6 sm:mx-10 shrink-0 inline-flex items-center hover:text-[#F34213] transition-colors duration-300"
+              className="font-display font-extrabold text-5xl sm:text-7xl md:text-8xl lg:text-[7.2rem] tracking-tight uppercase leading-[0.88] text-[#E7E1D7] mx-6 sm:mx-10 shrink-0 inline-flex items-center hover:text-[#F34213] transition-colors duration-300"
             >
-              <span>GIRINDRA M<span className="playfair-o text-[#F34213]">O</span>HAN</span>
-              <span className="text-[#F34213]">.W<span className="playfair-o text-[#E7E1D7]">O</span>RK</span>
-              <span className="text-[#8E8B83]/30 mx-6 sm:mx-10 text-4xl sm:text-6xl md:text-7xl font-mono">•</span>
+              <span>GIR<span className="text-[#F34213]">IN</span>DRA</span>
+              <span className="text-[#8E8B83]/30 mx-6 sm:mx-10 text-3xl sm:text-5xl font-mono">•</span>
+            </h1>
+          ))}
+        </div>
+
+        {/* Line 2: Mohan with red accent */}
+        <div className="flex animate-marquee whitespace-nowrap will-change-transform" style={{ animationDuration: '32s' }}>
+          {[...Array(8)].map((_, i) => (
+            <h1
+              key={i}
+              className="font-display font-extrabold text-5xl sm:text-7xl md:text-8xl lg:text-[7.2rem] tracking-tight uppercase leading-[0.88] text-[#E7E1D7] mx-6 sm:mx-10 shrink-0 inline-flex items-center hover:text-[#F34213] transition-colors duration-300"
+            >
+              <span className="text-[#F34213]">M<span className="playfair-o text-[#E7E1D7]">O</span>HAN</span>
+              <span className="text-[#8E8B83]/30 mx-6 sm:mx-10 text-3xl sm:text-5xl font-mono">•</span>
+            </h1>
+          ))}
+        </div>
+
+        {/* Line 3: .Work */}
+        <div className="flex animate-marquee whitespace-nowrap will-change-transform" style={{ animationDuration: '28s' }}>
+          {[...Array(8)].map((_, i) => (
+            <h1
+              key={i}
+              className="font-display font-extrabold text-5xl sm:text-7xl md:text-8xl lg:text-[7.2rem] tracking-tight uppercase leading-[0.88] text-[#E7E1D7] mx-6 sm:mx-10 shrink-0 inline-flex items-center hover:text-[#F34213] transition-colors duration-300"
+            >
+              <span><span className="text-[#F34213]">.</span>W<span className="playfair-o text-[#F34213]">O</span>RK</span>
+              <span className="text-[#8E8B83]/30 mx-6 sm:mx-10 text-3xl sm:text-5xl font-mono">•</span>
             </h1>
           ))}
         </div>
