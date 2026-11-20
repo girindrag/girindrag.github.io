@@ -271,6 +271,147 @@ class AudioEngine {
       osc.stop(now + 0.045);
     } catch (e) {}
   }
+
+  // --- Skhiladze-Inspired Dial & Tuner Sound Effects ---
+
+  // Mechanical Rotary Encoder Tick
+  playDialTick(velocity = 1) {
+    this.init();
+    if (!this.ctx) return;
+    try {
+      if (this.ctx.state === 'suspended') this.ctx.resume();
+      const now = this.ctx.currentTime;
+      const osc = this.ctx.createOscillator();
+      const filter = this.ctx.createBiquadFilter();
+      const gain = this.ctx.createGain();
+
+      osc.type = 'triangle';
+      osc.frequency.setValueAtTime(2600 + Math.random() * 800, now);
+      osc.frequency.exponentialRampToValueAtTime(700, now + 0.016);
+
+      filter.type = 'bandpass';
+      filter.frequency.setValueAtTime(3000, now);
+      filter.Q.setValueAtTime(3.0, now);
+
+      gain.gain.setValueAtTime(0.0001, now);
+      gain.gain.linearRampToValueAtTime(0.09 * Math.min(1.5, velocity), now + 0.002);
+      gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.022);
+
+      osc.connect(filter);
+      filter.connect(gain);
+      gain.connect(this.masterGain || this.ctx.destination);
+
+      osc.start(now);
+      osc.stop(now + 0.025);
+    } catch (e) {}
+  }
+
+  // Rapid Ratchet Rattle
+  playDialRattle(count = 3) {
+    for (let i = 0; i < count; i++) {
+      setTimeout(() => this.playDialTick(0.65), i * 22);
+    }
+  }
+
+  // Rotary Inertial Whoosh
+  playDialWhoosh(speed = 1) {
+    this.init();
+    if (!this.ctx) return;
+    try {
+      if (this.ctx.state === 'suspended') this.ctx.resume();
+      const now = this.ctx.currentTime;
+      const osc = this.ctx.createOscillator();
+      const filter = this.ctx.createBiquadFilter();
+      const gain = this.ctx.createGain();
+
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(120, now);
+      osc.frequency.exponentialRampToValueAtTime(420, now + 0.12);
+      osc.frequency.exponentialRampToValueAtTime(80, now + 0.32);
+
+      filter.type = 'lowpass';
+      filter.frequency.setValueAtTime(550, now);
+
+      gain.gain.setValueAtTime(0.0001, now);
+      gain.gain.linearRampToValueAtTime(0.05 * Math.min(1.2, speed), now + 0.1);
+      gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.35);
+
+      osc.connect(filter);
+      filter.connect(gain);
+      gain.connect(this.masterGain || this.ctx.destination);
+
+      osc.start(now);
+      osc.stop(now + 0.38);
+    } catch (e) {}
+  }
+
+  // Metallic Station Lock-In Tone
+  playDialDock() {
+    this.init();
+    if (!this.ctx) return;
+    try {
+      if (this.ctx.state === 'suspended') this.ctx.resume();
+      const now = this.ctx.currentTime;
+
+      [330, 660].forEach((freq, idx) => {
+        const osc = this.ctx.createOscillator();
+        const gain = this.ctx.createGain();
+
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq, now);
+        osc.frequency.exponentialRampToValueAtTime(freq * 0.96, now + 0.16);
+
+        gain.gain.setValueAtTime(0.0001, now);
+        gain.gain.linearRampToValueAtTime(idx === 0 ? 0.1 : 0.04, now + 0.004);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.2);
+
+        osc.connect(gain);
+        gain.connect(this.masterGain || this.ctx.destination);
+
+        osc.start(now);
+        osc.stop(now + 0.22);
+      });
+    } catch (e) {}
+  }
+
+  // Deep Cinematic Impact & Shimmer Strike ("Click to Tune In")
+  playDialStrike() {
+    this.init();
+    if (!this.ctx) return;
+    try {
+      if (this.ctx.state === 'suspended') this.ctx.resume();
+      const now = this.ctx.currentTime;
+
+      // Sub-bass impact
+      const bassOsc = this.ctx.createOscillator();
+      const bassGain = this.ctx.createGain();
+      bassOsc.type = 'sine';
+      bassOsc.frequency.setValueAtTime(110, now);
+      bassOsc.frequency.exponentialRampToValueAtTime(42, now + 0.45);
+      bassGain.gain.setValueAtTime(0.0001, now);
+      bassGain.gain.linearRampToValueAtTime(0.32, now + 0.008);
+      bassGain.gain.exponentialRampToValueAtTime(0.0001, now + 0.75);
+      bassOsc.connect(bassGain);
+      bassGain.connect(this.masterGain || this.ctx.destination);
+      bassOsc.start(now);
+      bassOsc.stop(now + 0.8);
+
+      // Shimmer chord harmonics (A4, E5, A5)
+      [440, 659.25, 880].forEach((freq, idx) => {
+        const osc = this.ctx.createOscillator();
+        const gain = this.ctx.createGain();
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(freq, now + idx * 0.025);
+        gain.gain.setValueAtTime(0.0001, now + idx * 0.025);
+        gain.gain.linearRampToValueAtTime(0.1, now + idx * 0.025 + 0.008);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + idx * 0.025 + 0.85);
+        osc.connect(gain);
+        gain.connect(this.masterGain || this.ctx.destination);
+        osc.start(now + idx * 0.025);
+        osc.stop(now + idx * 0.025 + 0.9);
+      });
+    } catch (e) {}
+  }
 }
 
 export const soundEngine = new AudioEngine();
