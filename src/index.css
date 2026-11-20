@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    user-select: none;
+    -webkit-user-select: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
+/* Custom Mac-style scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+/* Traffic light button hover effects */
+.traffic-btn {
+  width: 12px;
+  height: 12px;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: opacity 0.15s ease;
+}
+
+.traffic-btn svg {
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.window-header:hover .traffic-btn svg {
+  opacity: 0.6;
+}
+
+/* Dock bouncing animation */
+@keyframes dockBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+
+.dock-bounce {
+  animation: dockBounce 0.5s ease;
+}
+
+/* Glassmorphism helpers */
+.mac-glass {
+  background: rgba(30, 32, 40, 0.75);
+  backdrop-filter: blur(28px) saturate(190%);
+  -webkit-backdrop-filter: blur(28px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.mac-glass-light {
+  background: rgba(245, 245, 247, 0.8);
+  backdrop-filter: blur(28px) saturate(190%);
+  -webkit-backdrop-filter: blur(28px) saturate(190%);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
