@@ -46,26 +46,36 @@ export default function TomHero() {
         </div>
       </div>
 
-      {/* Main Massive Kinetic Brand Title */}
-      <div className="my-auto py-12 sm:py-20">
-        <h1 className="font-display font-extrabold text-5xl sm:text-7xl md:text-8xl lg:text-[10rem] tracking-tight uppercase leading-[0.88] text-[#E7E1D7]">
-          GIRINDRA M<span className="playfair-o">O</span>HAN
-          <span className="text-[#F34213]">.W<span className="playfair-o">O</span>RK</span>
-        </h1>
+      {/* Main Massive Kinetic Brand Title with Continuous Running Marquee Animation */}
+      <div className="my-auto py-8 sm:py-14 -mx-5 sm:-mx-12 overflow-hidden select-none border-y border-[#E7E1D7]/[0.08] my-4 sm:my-8 bg-[#0B0B0B]/30">
+        <div className="flex animate-marquee whitespace-nowrap will-change-transform">
+          {[...Array(8)].map((_, i) => (
+            <h1
+              key={i}
+              className="font-display font-extrabold text-6xl sm:text-8xl md:text-9xl lg:text-[10.5rem] tracking-tight uppercase leading-[0.9] text-[#E7E1D7] mx-6 sm:mx-10 shrink-0 inline-flex items-center hover:text-[#F34213] transition-colors duration-300"
+            >
+              <span>GIRINDRA M<span className="playfair-o text-[#F34213]">O</span>HAN</span>
+              <span className="text-[#F34213]">.W<span className="playfair-o text-[#E7E1D7]">O</span>RK</span>
+              <span className="text-[#8E8B83]/30 mx-6 sm:mx-10 text-4xl sm:text-6xl md:text-7xl font-mono">•</span>
+            </h1>
+          ))}
+        </div>
+      </div>
 
-        {/* Positioning Statement */}
-        <p className="font-display text-xl sm:text-3xl md:text-4xl font-bold uppercase tracking-tight text-[#E7E1D7] mt-8 sm:mt-12 max-w-4xl leading-[1.15]">
+      {/* Positioning Statement & Mission */}
+      <div className="max-w-4xl">
+        <p className="font-display text-xl sm:text-3xl md:text-4xl font-bold uppercase tracking-tight text-[#E7E1D7] mt-2 sm:mt-4 leading-[1.15]">
           I engineer high-performance systems and build infrastructure that never breaks —{' '}
           <span className="text-[#F34213]">stronger, sharper, unforgettable.</span>
         </p>
 
-        <p className="font-sans text-sm sm:text-base text-[#8E8B83] mt-6 max-w-2xl leading-relaxed">
+        <p className="font-sans text-sm sm:text-base text-[#8E8B83] mt-5 max-w-2xl leading-relaxed">
           Cloud / IoT Engineer &amp; Team Lead with 8+ years across enterprise banking datacenters, automotive IoT fleets, and self-healing Debian 11 container architectures.
         </p>
       </div>
 
       {/* Bottom Context Row */}
-      <div className="flex items-end justify-between pt-8 border-t border-[#E7E1D7]/[0.1] text-xs font-mono tracking-widest uppercase text-[#8E8B83]">
+      <div className="flex items-end justify-between pt-8 border-t border-[#E7E1D7]/[0.1] text-xs font-mono tracking-widest uppercase text-[#8E8B83] mt-8">
         <div className="flex items-center space-x-4">
           <span>AUT<span className="playfair-o">O</span>MATI<span className="playfair-o">O</span>N</span>
           <span>•</span>
