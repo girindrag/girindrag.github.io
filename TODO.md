@@ -10,6 +10,7 @@ This file tracks the current state, recent releases, and planned enhancements fo
 - [x] **Stack Kinetic Marquee Hero**: 3-line kinetic running marquee (`GIRINDRA / MOHAN / .WORK`) with vermillion accents.
 - [x] **Procedural Web Audio Engine**: Zero-asset generative ambient soundscapes (`Pulse` synth arpeggios & `Drift` lush pads) with instant click and chime feedback.
 - [x] **Interactive Sound Bar**: Redesigned bottom dock pill button with 5 animated equalizer bars (`Sound on`) and 5 muted dots (`Sound off`).
+- [x] **Skhiladze Interactive Cursor**: Dual-layer precision cursor with ambient radial spotlight (`.cur-light`), glowing core dot (`.cur__p`), magnetic hover ring (`.cur__r`), dynamic action badges (`.cur__l`), and exponential lerp motion physics.
 - [x] **Editorial Resume Page (`resume.html`)**: Clean standalone resume view styled with site typography, ATS-friendly semantic markup, and PDF download button.
 - [x] **CI/CD Reliability**: Fixed GitHub Actions workflow race condition by separating `build` and `deploy` jobs for 100% reliable GitHub Pages deployment.
 - [x] **Agent Infrastructure**: Created `AGENTS.md`, `docs/ARCHITECTURE.md`, `docs/DECISIONS.md`, `.agents/skills/`, and `TODO.md` for fast, autonomous updates.
