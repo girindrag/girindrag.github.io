@@ -8,14 +8,42 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['-apple-system', 'BlinkMacSystemFont', '"SF Pro Display"', '"SF Pro Text"', 'system-ui', 'sans-serif'],
-        mono: ['"SF Mono"', 'Menlo', 'Monaco', 'Courier New', 'monospace'],
+        sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'sans-serif'],
+        display: ['"Space Grotesk"', '"Plus Jakarta Sans"', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'Menlo', 'Monaco', 'monospace'],
       },
-      boxShadow: {
-        'mac-window': '0 25px 50px -12px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1)',
-        'mac-dock': '0 20px 40px rgba(0, 0, 0, 0.3), inset 0 0.5px 0.5px rgba(255, 255, 255, 0.4)',
-        'mac-menu': '0 10px 30px rgba(0,0,0,0.25)',
+      colors: {
+        nakiti: {
+          dark: '#070709',
+          card: '#0f0f13',
+          border: 'rgba(255, 255, 255, 0.08)',
+          cream: '#f5f2eb',
+          'cream-card': '#ece7dc',
+          'cream-text': '#121214',
+          accent: '#5865f2',
+          periwinkle: '#6c72ff',
+          mint: '#10b981',
+        }
       },
+      animation: {
+        'marquee': 'marquee 25s linear infinite',
+        'marquee-reverse': 'marquee-reverse 25s linear infinite',
+        'pulse-glow': 'pulseGlow 2.5s ease-in-out infinite',
+      },
+      keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+        'marquee-reverse': {
+          '0%': { transform: 'translateX(-50%)' },
+          '100%': { transform: 'translateX(0%)' },
+        },
+        pulseGlow: {
+          '0%, 100%': { opacity: '0.4', transform: 'scale(1)' },
+          '50%': { opacity: '0.8', transform: 'scale(1.05)' },
+        }
+      }
     },
   },
   plugins: [],
