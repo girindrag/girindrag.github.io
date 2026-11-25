@@ -46,7 +46,7 @@ export default function TomCornerHUD() {
           className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl tom-glass hover:bg-white/[0.12] flex items-center justify-center transition-all duration-300 group shadow-2xl"
           title="Girindra Mohan"
         >
-          <span className="font-display font-extrabold text-2xl sm:text-3xl text-white group-hover:text-[#F34213] transition-colors leading-none tracking-tighter">
+          <span className="font-display font-extrabold text-2xl sm:text-3xl text-[#121214] dark:text-white group-hover:text-[#F34213] transition-colors leading-none tracking-tighter">
             g<span className="text-[#F34213]">.</span>
           </span>
         </a>

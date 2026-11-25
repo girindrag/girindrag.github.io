@@ -396,6 +396,12 @@ html.light .hover\:bg-\[\#2e2e33\]:hover {
 }
 
 /* Typography */
+html.light h1,
+html.light h2,
+html.light h3 {
+  color: #121214 !important;
+}
+
 html.light .text-\[\#E7E1D7\] {
   color: #121214 !important;
 }

@@ -297,7 +297,7 @@ export default function SkhiladzeRadialDial() {
           className="relative z-10 flex flex-col items-center text-center cursor-pointer p-4 group"
         >
           {/* Massive Name: Girindra Mohan */}
-          <h1 className="font-display font-extrabold text-3xl sm:text-6xl lg:text-7xl uppercase tracking-tight text-[#E7E1D7] group-hover:text-white transition-colors duration-300">
+          <h1 className="font-display font-extrabold text-3xl sm:text-6xl lg:text-7xl uppercase tracking-tight text-[#121214] dark:text-[#E7E1D7] group-hover:text-[#F34213] transition-colors duration-300">
             Girindra Mohan
           </h1>
 
