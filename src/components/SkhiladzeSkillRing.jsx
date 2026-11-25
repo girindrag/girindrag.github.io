@@ -253,7 +253,7 @@ export default function SkhiladzeSkillRing() {
                 <span className="text-[10px] text-[#8E8B83]/70">Verified CLI Patterns</span>
               </div>
 
-              <div className="rounded-2xl bg-[#0B0B0B] border border-white/[0.1] p-4 font-mono text-xs text-[#E7E1D7] shadow-inner space-y-2 overflow-x-auto">
+              <div className="rounded-2xl bg-[#0B0B0B] border border-white/[0.1] p-4 font-mono text-xs text-[#E7E1D7] shadow-inner space-y-2 overflow-x-auto dark-terminal-card">
                 {currentStage.commands.map((cmd, cIdx) => (
                   <div key={cIdx} className="flex items-center justify-between gap-4 group">
                     <span className="text-emerald-400 select-all whitespace-pre-wrap">{cmd}</span>

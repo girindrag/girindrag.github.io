@@ -49,7 +49,7 @@ export default function TomExperienceGrid() {
                 {exp.company.includes('(formerly') ? (
                   <>
                     <span>{exp.company.split('(formerly')[0].trim()}</span>
-                    <span className="block text-xs sm:text-sm font-mono normal-case tracking-normal font-normal text-[#8E8B83] mt-1.5 text-white/60">
+                    <span className="block text-xs sm:text-sm font-mono normal-case tracking-normal font-normal text-[#8E8B83] mt-1.5 opacity-80">
                       (formerly{exp.company.split('(formerly')[1]}
                     </span>
                   </>

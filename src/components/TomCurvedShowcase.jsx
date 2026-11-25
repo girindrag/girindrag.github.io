@@ -114,7 +114,7 @@ export default function TomCurvedShowcase() {
             </div>
 
             {/* Right: Retro-Futuristic Terminal Display (5 cols) */}
-            <div className="lg:col-span-5 rounded-2xl bg-[#0B0B0B] border border-[#E7E1D7]/[0.12] p-5 font-mono text-xs text-[#E7E1D7] shadow-inner space-y-3">
+            <div className="lg:col-span-5 rounded-2xl bg-[#0B0B0B] border border-[#E7E1D7]/[0.12] p-5 font-mono text-xs text-[#E7E1D7] shadow-inner space-y-3 dark-terminal-card">
               <div className="flex items-center justify-between pb-2 border-b border-white/[0.08] text-[10px] text-[#8E8B83]">
                 <span>ARCH_MONITOR.LOG</span>
                 <span className="text-emerald-400">STATUS: HEALTHY</span>
