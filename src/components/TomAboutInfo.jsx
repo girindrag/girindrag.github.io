@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { portfolioData } from '../data/portfolioData';
-import { ArrowRight, Download } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Download } from 'lucide-react';
 
 export default function TomAboutInfo() {
   const { personal, education, certifications } = portfolioData;
@@ -60,7 +60,7 @@ export default function TomAboutInfo() {
             </p>
           </div>
 
-          {/* Tom de Koning Style Vermillion Pill Button */}
+          {/* Tom de Koning Style Action Buttons */}
           <div className="pt-4 flex flex-wrap items-center gap-4">
             <a
               href="#work"
@@ -76,12 +76,23 @@ export default function TomAboutInfo() {
               href="./resume.html"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 rounded-full tom-glass hover:bg-white/[0.12] text-[#E7E1D7] font-display font-extrabold text-xs sm:text-sm uppercase tracking-widest transition-all duration-300 flex items-center space-x-2"
+              className="px-8 py-4 rounded-full tom-glass hover:bg-white/[0.12] text-[#121214] dark:text-[#E7E1D7] font-display font-extrabold text-xs sm:text-sm uppercase tracking-widest transition-all duration-300 flex items-center space-x-2"
             >
               <span>
                 RES<span className="playfair-o">U</span>ME
               </span>
               <span className="text-sm">↗</span>
+            </a>
+
+            <a
+              href={personal.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-7 py-4 rounded-full tom-glass hover:bg-[#0077b5]/15 hover:border-[#0077b5]/50 text-[#121214] dark:text-[#E7E1D7] hover:text-[#0077b5] dark:hover:text-[#0077b5] font-display font-extrabold text-xs sm:text-sm uppercase tracking-widest transition-all duration-300 flex items-center space-x-2"
+              title="Connect with Girindra on LinkedIn (@girindrag)"
+            >
+              <span>LINKEDIN</span>
+              <ArrowUpRight className="w-4 h-4 text-[#0077b5]" />
             </a>
           </div>
         </div>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { portfolioData } from '../data/portfolioData';
 import { ArrowUpRight, Mail, Phone, Download } from 'lucide-react';
 import { LinkedinIcon, GithubIcon } from './Icons';
+import { soundEngine } from '../utils/audioEngine';
 
 export default function TomFooterMarquee() {
   const { personal } = portfolioData;
@@ -23,28 +24,39 @@ export default function TomFooterMarquee() {
   return (
     <footer id="contact" className="relative pt-24 pb-12 overflow-hidden border-t border-[#E7E1D7]/[0.1] bg-[#0B0B0B] tom-glow-bottom">
       <div className="max-w-7xl mx-auto px-5 sm:px-12 relative z-10">
-        {/* 3D Extruded Center Monolith Centerpiece */}
-        <div
+        {/* 3D Extruded Center Monolith Centerpiece linking directly to LinkedIn */}
+        <a
+          href={personal.linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
-          className="flex flex-col items-center justify-center py-16 sm:py-24 cursor-pointer"
+          onClick={() => soundEngine.playClick()}
+          data-cursor="open"
+          data-cursor-text="Connect"
+          className="flex flex-col items-center justify-center py-16 sm:py-24 cursor-pointer group select-none transition-transform"
+          title="Connect with Girindra Mohan on LinkedIn (@girindrag)"
+          aria-label="Connect with Girindra Mohan on LinkedIn"
         >
           <div
             style={{
               transform: `perspective(600px) rotateX(${rotate.x}deg) rotateY(${rotate.y}deg)`,
               transition: 'transform 0.15s ease-out',
             }}
-            className="w-32 h-32 sm:w-44 sm:h-44 rounded-3xl tom-glass-elevated border-2 border-white/[0.15] flex items-center justify-center shadow-[0_25px_60px_rgba(243,66,19,0.3)] group hover:border-[#F34213]/60 transition-colors"
+            className="w-32 h-32 sm:w-44 sm:h-44 rounded-3xl tom-glass-elevated border-2 border-white/[0.15] dark:border-white/[0.15] group-hover:border-[#F34213] flex items-center justify-center shadow-[0_25px_60px_rgba(243,66,19,0.3)] group-hover:shadow-[0_30px_70px_rgba(243,66,19,0.45)] transition-all duration-300 group-hover:scale-105"
           >
-            <span className="font-display font-black text-6xl sm:text-8xl text-[#E7E1D7] group-hover:text-[#F34213] transition-colors leading-none tracking-tighter">
+            <span className="font-display font-black text-6xl sm:text-8xl text-[#121214] dark:text-[#E7E1D7] group-hover:text-[#F34213] transition-colors leading-none tracking-tighter">
               g<span className="text-[#F34213]">.</span>
             </span>
           </div>
 
-          <div className="text-xs font-mono tracking-widest uppercase text-[#8E8B83] mt-6">
-            CLICK T<span className="playfair-o">O</span> C<span className="playfair-o">O</span>NNECT
+          <div className="flex items-center space-x-2 text-xs font-mono tracking-widest uppercase text-[#8E8B83] group-hover:text-[#F34213] transition-colors mt-6">
+            <span>
+              CLICK T<span className="playfair-o">O</span> C<span className="playfair-o">O</span>NNECT
+            </span>
+            <ArrowUpRight className="w-3.5 h-3.5 text-[#F34213] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </div>
-        </div>
+        </a>
 
         {/* 4-Quadrant Editorial Metadata Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 py-12 border-t border-[#E7E1D7]/[0.1] text-xs font-mono uppercase tracking-widest text-[#8E8B83]">

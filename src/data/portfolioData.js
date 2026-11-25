@@ -6,7 +6,7 @@ export const portfolioData = {
     email: "iamgirindra@gmail.com",
     phone: "+91 9595066233",
     location: "Pune, India",
-    linkedin: "https://linkedin.com/in/girindrag",
+    linkedin: "https://www.linkedin.com/in/girindrag/",
     github: "https://github.com/girindrag",
     twitter: "https://twitter.com/girindrag",
     avatar: "https://avatars.githubusercontent.com/u/16224892?v=4",
