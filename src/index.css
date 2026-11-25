@@ -433,29 +433,93 @@ html.light .group:hover .group-hover\:text-white:not(.dark-terminal-card *) {
 }
 
 /* Terminal & CLI boxes always retain crisp high-contrast developer console styling */
+html.light .dark-terminal-card,
+html.dark .dark-terminal-card,
 .dark-terminal-card {
-  background-color: #0E0E10 !important;
+  background-color: #0E0E12 !important;
   color: #E7E1D7 !important;
-  border-color: rgba(255, 255, 255, 0.12) !important;
-  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.6), 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.8), 0 10px 30px rgba(0, 0, 0, 0.2) !important;
 }
 
+html.light .dark-terminal-card .text-white,
+html.light .dark-terminal-card [class*="text-white"],
 .dark-terminal-card .text-white,
 .dark-terminal-card [class*="text-white"] {
   color: #FFFFFF !important;
 }
 
+html.light .dark-terminal-card .text-\[\#8E8B83\],
+html.light .dark-terminal-card [class*="text-[#8E8B83]"],
 .dark-terminal-card .text-\[\#8E8B83\],
 .dark-terminal-card [class*="text-[#8E8B83]"] {
-  color: #8E8B83 !important;
+  color: #9CA3AF !important;
 }
 
+html.light .dark-terminal-card .text-emerald-400,
 .dark-terminal-card .text-emerald-400 {
-  color: #34d399 !important;
+  color: #34D399 !important;
 }
 
+html.light .dark-terminal-card .text-\[\#F34213\],
 .dark-terminal-card .text-\[\#F34213\] {
   color: #F34213 !important;
+}
+
+/* Selected Work Project Scrub Bar in Light Mode */
+html.light .showcase-scrub-bar {
+  background-color: #EDEAE1 !important;
+  border-color: rgba(18, 18, 20, 0.12) !important;
+}
+
+html.light .showcase-scrub-bar button:not(.bg-\[\#F34213\]) {
+  color: #121214 !important;
+  border-color: rgba(18, 18, 20, 0.1) !important;
+}
+
+html.light .showcase-scrub-bar button:not(.bg-\[\#F34213\]) div {
+  color: #121214 !important;
+}
+
+html.light .showcase-scrub-bar button:not(.bg-\[\#F34213\]):hover {
+  background-color: rgba(18, 18, 20, 0.05) !important;
+}
+
+/* Skills Ring Active Pillar Pill in Light Mode */
+html.light .active-pillar-pill {
+  background-color: #FFFFFF !important;
+  color: #121214 !important;
+  border-color: #F34213 !important;
+  box-shadow: 0 4px 16px rgba(243, 66, 19, 0.15) !important;
+}
+
+html.light .active-pillar-pill div {
+  color: #121214 !important;
+}
+
+html.light .active-pillar-pill div:first-child {
+  color: #F34213 !important;
+}
+
+/* Bottom Dock Sound Pill */
+html.light .sound-pill-active {
+  background-color: #121214 !important;
+  color: #FFFFFF !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+html.light .sound-pill-active span {
+  color: #FFFFFF !important;
+}
+
+html.light .sound-pill-inactive {
+  background-color: rgba(18, 18, 20, 0.06) !important;
+  color: #4A4843 !important;
+  border-color: rgba(18, 18, 20, 0.1) !important;
+}
+
+html.light .sound-pill-inactive span {
+  color: #4A4843 !important;
 }
 
 /* Borders */

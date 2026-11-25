@@ -150,7 +150,7 @@ export default function SkhiladzeSkillRing() {
                   onClick={() => selectPillar(idx)}
                   className={`p-3 rounded-2xl text-left font-mono transition-all border ${
                     isSelected
-                      ? 'bg-[#18181A] border-[#F34213] text-white shadow-[0_0_15px_rgba(243,66,19,0.25)]'
+                      ? 'bg-[#18181A] border-[#F34213] text-white active-pillar-pill shadow-[0_0_15px_rgba(243,66,19,0.25)]'
                       : 'bg-white/[0.02] hover:bg-white/[0.05] border-white/[0.08] text-[#8E8B83]'
                   }`}
                 >
@@ -253,7 +253,7 @@ export default function SkhiladzeSkillRing() {
                 <span className="text-[10px] text-[#8E8B83]/70">Verified CLI Patterns</span>
               </div>
 
-              <div className="rounded-2xl bg-[#0B0B0B] border border-white/[0.1] p-4 font-mono text-xs text-[#E7E1D7] shadow-inner space-y-2 overflow-x-auto dark-terminal-card">
+              <div className="rounded-2xl dark-terminal-card border border-white/[0.12] p-4 font-mono text-xs shadow-inner space-y-2 overflow-x-auto">
                 {currentStage.commands.map((cmd, cIdx) => (
                   <div key={cIdx} className="flex items-center justify-between gap-4 group">
                     <span className="text-emerald-400 select-all whitespace-pre-wrap">{cmd}</span>

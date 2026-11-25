@@ -114,7 +114,7 @@ export default function TomCurvedShowcase() {
             </div>
 
             {/* Right: Retro-Futuristic Terminal Display (5 cols) */}
-            <div className="lg:col-span-5 rounded-2xl bg-[#0B0B0B] border border-[#E7E1D7]/[0.12] p-5 font-mono text-xs text-[#E7E1D7] shadow-inner space-y-3 dark-terminal-card">
+            <div className="lg:col-span-5 rounded-2xl dark-terminal-card border border-white/[0.12] p-5 font-mono text-xs shadow-inner space-y-3">
               <div className="flex items-center justify-between pb-2 border-b border-white/[0.08] text-[10px] text-[#8E8B83]">
                 <span>ARCH_MONITOR.LOG</span>
                 <span className="text-emerald-400">STATUS: HEALTHY</span>
@@ -166,7 +166,7 @@ export default function TomCurvedShowcase() {
         </div>
 
         {/* Project Selector Scrub Bar */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 border-t border-[#E7E1D7]/[0.1] bg-[#121212]">
+        <div className="grid grid-cols-2 sm:grid-cols-4 border-t border-[#E7E1D7]/[0.1] bg-[#121212] showcase-scrub-bar">
           {projects.map((p, idx) => (
             <button
               key={p.id}

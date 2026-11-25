@@ -104,8 +104,8 @@ export default function NakitiBottomDock({ onToggleHUD, hudOpen }) {
           onClick={toggleSound}
           className={`group flex items-center gap-2.5 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full transition-all duration-300 active:scale-95 select-none ${
             isPlaying
-              ? 'bg-[#1F2129] border border-white/[0.14] text-white shadow-[0_0_20px_rgba(251,94,39,0.22)]'
-              : 'bg-[#181A22] hover:bg-[#1F2129] border border-white/[0.08] hover:border-white/[0.14] text-[#9AA0AA]'
+              ? 'sound-pill-active bg-[#1F2129] border border-white/[0.14] text-white shadow-[0_0_20px_rgba(251,94,39,0.22)]'
+              : 'sound-pill-inactive bg-[#181A22] hover:bg-[#1F2129] border border-white/[0.08] hover:border-white/[0.14] text-[#9AA0AA]'
           }`}
           title={isPlaying ? 'Click to Mute background sound' : 'Click to Unmute & Play background soundscape'}
           aria-label={isPlaying ? 'Sound on' : 'Sound off'}
