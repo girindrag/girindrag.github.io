@@ -15,6 +15,7 @@ This file tracks the current state, recent releases, and planned enhancements fo
 - [x] **Skills Ring & Masterclass Curriculum**: Added "SKILLS RING" to MENU and interactive section with 6 core pillars (Cloud, Kubernetes, Automation, Linux, Networking, Terraform) structured from Start to End with IoT and System Administrator application guides, verified CLI commands, and official documentation links.
 - [x] **Editorial Resume Page (`resume.html`)**: Clean standalone resume view styled with site typography, ATS-friendly semantic markup, and PDF download button.
 - [x] **CI/CD Reliability**: Fixed GitHub Actions workflow race condition by separating `build` and `deploy` jobs for 100% reliable GitHub Pages deployment.
+- [x] **Light & Dark Theme System**: Luxury Swiss brutalist light palette (porcelain `#F8F6F0` & obsidian `#121214`), header & dock toggle buttons, drawer selector, keyboard shortcut (`T`), localStorage persistence, and system preference detection.
 - [x] **Agent Infrastructure**: Created `AGENTS.md`, `docs/ARCHITECTURE.md`, `docs/DECISIONS.md`, `.agents/skills/`, and `TODO.md` for fast, autonomous updates.
 
 ---
