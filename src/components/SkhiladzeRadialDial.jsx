@@ -25,8 +25,11 @@ export default function SkhiladzeRadialDial() {
   const [activeStation, setActiveStation] = useState(0);
   const [isTuned, setIsTuned] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
-  const [lastTickIdx, setLastTickIdx] = useState(0);
 
+  const activeStationRef = useRef(0);
+  activeStationRef.current = activeStation;
+
+  const lastTickIdxRef = useRef(0);
   const dragStartRef = useRef({ angle: 0, initialRotation: 0, lastX: 0, lastY: 0, velocity: 0 });
   const animFrameRef = useRef(null);
   const wheelSnapTimerRef = useRef(null);
@@ -46,11 +49,11 @@ export default function SkhiladzeRadialDial() {
   const checkTickAudio = useCallback((deg) => {
     const tickStep = 360 / TOTAL_TICKS;
     const currentTickIdx = Math.floor((((deg % 360) + 360) % 360) / tickStep);
-    if (currentTickIdx !== lastTickIdx) {
-      setLastTickIdx(currentTickIdx);
+    if (currentTickIdx !== lastTickIdxRef.current) {
+      lastTickIdxRef.current = currentTickIdx;
       soundEngine.playDialTick(1.0);
     }
-  }, [lastTickIdx]);
+  }, []);
 
   // Click on a specific discipline station to rotate dial to it
   const tuneToStation = (idx) => {
@@ -111,7 +114,7 @@ export default function SkhiladzeRadialDial() {
       checkTickAudio(newRotation);
 
       const st = getStationFromRotation(newRotation);
-      if (st !== activeStation) {
+      if (st !== activeStationRef.current) {
         setActiveStation(st);
       }
     };
@@ -137,7 +140,7 @@ export default function SkhiladzeRadialDial() {
       window.removeEventListener('pointermove', handlePointerMove);
       window.removeEventListener('pointerup', handlePointerUp);
     };
-  }, [isDragging, activeStation, checkTickAudio, getStationFromRotation]);
+  }, [isDragging, checkTickAudio, getStationFromRotation]);
 
   // Non-passive wheel listener: prevents default page scroll and auto-snaps on pause
   useEffect(() => {
@@ -151,7 +154,7 @@ export default function SkhiladzeRadialDial() {
       setRotation(newRot);
       checkTickAudio(newRot);
       const st = getStationFromRotation(newRot);
-      if (st !== activeStation) {
+      if (st !== activeStationRef.current) {
         setActiveStation(st);
         soundEngine.playDialTick(1.2);
       }
@@ -167,7 +170,7 @@ export default function SkhiladzeRadialDial() {
         setRotation(snappedDeg);
         setActiveStation(nearestIdx);
         soundEngine.playDialDock();
-      }, 250);
+      }, 200);
     };
 
     el.addEventListener('wheel', handleNativeWheel, { passive: false });
@@ -175,7 +178,7 @@ export default function SkhiladzeRadialDial() {
       el.removeEventListener('wheel', handleNativeWheel);
       if (wheelSnapTimerRef.current) clearTimeout(wheelSnapTimerRef.current);
     };
-  }, [activeStation, checkTickAudio, getStationFromRotation]);
+  }, [checkTickAudio, getStationFromRotation]);
 
   const curDiscipline = DISCIPLINES[activeStation];
 
