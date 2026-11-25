@@ -329,4 +329,181 @@
   transform: translate(-50%, -50%) scale(0.92);
 }
 
+/* ==========================================================================
+   LIGHT THEME OVERRIDES (Luxury Swiss Brutalist Porcelain Aesthetic)
+   ========================================================================== */
+
+html.light {
+  background-color: #F8F6F0 !important;
+  color: #121214 !important;
+}
+
+html.light body {
+  background-color: #F8F6F0 !important;
+  color: #121214 !important;
+}
+
+html.light ::-webkit-scrollbar-track {
+  background: #F8F6F0;
+}
+
+html.light ::-webkit-scrollbar-thumb {
+  background: #D8D4C8;
+}
+
+html.light ::-webkit-scrollbar-thumb:hover {
+  background: #F34213;
+}
+
+/* Backgrounds */
+html.light .bg-\[\#0B0B0B\] {
+  background-color: #F8F6F0 !important;
+}
+
+html.light .bg-\[\#0B0B0B\]\/98,
+html.light .bg-\[\#0B0B0B\]\/90,
+html.light .bg-\[\#0B0B0B\]\/80,
+html.light .bg-\[\#0B0B0B\]\/50,
+html.light .bg-\[\#0B0B0B\]\/30 {
+  background-color: rgba(248, 246, 240, 0.96) !important;
+}
+
+html.light .bg-\[\#121214\],
+html.light .bg-\[\#141416\],
+html.light .bg-\[\#161618\],
+html.light .bg-\[\#18181A\],
+html.light .bg-\[\#1F2129\],
+html.light .bg-\[\#242428\] {
+  background-color: #FFFFFF !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+html.light .bg-\[\#141416\]\/98,
+html.light .bg-\[\#141416\]\/95,
+html.light .bg-\[\#161618\]\/90,
+html.light .bg-\[\#18181a\]\/85,
+html.light .bg-\[\#18181A\]\/90,
+html.light .bg-\[\#181A22\] {
+  background-color: rgba(255, 255, 255, 0.92) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+html.light .hover\:bg-\[\#222226\]\/90:hover,
+html.light .hover\:bg-\[\#1a1a1e\]\/95:hover,
+html.light .hover\:bg-\[\#1F2129\]:hover,
+html.light .hover\:bg-\[\#2e2e33\]:hover {
+  background-color: rgba(245, 243, 238, 0.98) !important;
+}
+
+/* Typography */
+html.light .text-\[\#E7E1D7\] {
+  color: #121214 !important;
+}
+
+html.light .text-\[\#8E8B83\] {
+  color: #5C5A54 !important;
+}
+
+html.light .text-\[\#9AA0AA\] {
+  color: #555861 !important;
+}
+
+/* Text white overrides (headings, monograms, buttons), but NOT text on primary vermillion buttons */
+html.light h1.text-white,
+html.light h2.text-white,
+html.light h3.text-white,
+html.light span.text-white:not(.tom-pill-cta span):not([class*="bg-\[\#F34213\]"] span),
+html.light .group:hover .group-hover\:text-white {
+  color: #121214 !important;
+}
+
+/* Borders */
+html.light .border-\[\#0B0B0B\] {
+  border-color: #F8F6F0 !important;
+}
+
+html.light .border-white\/\[0\.04\],
+html.light .border-white\/\[0\.05\],
+html.light .border-white\/\[0\.06\],
+html.light .border-white\/\[0\.08\],
+html.light .border-white\/\[0\.1\],
+html.light .border-white\/\[0\.12\],
+html.light .border-white\/\[0\.14\],
+html.light .border-white\/\[0\.2\],
+html.light .border-white\/\[0\.25\],
+html.light .border-\[\#E7E1D7\]\/\[0\.08\],
+html.light .border-\[\#E7E1D7\]\/\[0\.1\],
+html.light .border-\[\#E7E1D7\]\/\[0\.12\],
+html.light .border-\[\#E7E1D7\]\/\[0\.2\] {
+  border-color: rgba(18, 18, 20, 0.12) !important;
+}
+
+/* Glassmorphism */
+html.light .tom-glass {
+  background: rgba(255, 255, 255, 0.8) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(18, 18, 20, 0.1) !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+}
+
+html.light .tom-glass-elevated {
+  background: rgba(255, 255, 255, 0.94) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(18, 18, 20, 0.12) !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Radial Dial Ticks & Accents in Light Mode */
+html.light .bg-white\/\[0\.6\] {
+  background-color: rgba(18, 18, 20, 0.75) !important;
+}
+
+html.light .bg-white\/\[0\.2\] {
+  background-color: rgba(18, 18, 20, 0.22) !important;
+}
+
+html.light .bg-white\/\[0\.12\],
+html.light .bg-white\/\[0\.1\],
+html.light .bg-white\/\[0\.08\],
+html.light .bg-white\/\[0\.06\],
+html.light .bg-white\/\[0\.05\] {
+  background-color: rgba(18, 18, 20, 0.06) !important;
+}
+
+html.light .hover\:bg-white\/\[0\.08\]:hover,
+html.light .hover\:bg-white\/\[0\.1\]:hover,
+html.light .hover\:bg-white\/\[0\.12\]:hover,
+html.light .hover\:bg-white\/\[0\.15\]:hover {
+  background-color: rgba(18, 18, 20, 0.08) !important;
+}
+
+/* Spiderweb radial lines in hero */
+html.light .from-transparent.via-white\/\[0\.06\].to-transparent {
+  --tw-gradient-stops: transparent, rgba(18, 18, 20, 0.08), transparent !important;
+}
+
+/* Cursor adjustments in light mode */
+html.light .cur-light {
+  background: radial-gradient(circle 380px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(243, 66, 19, 0.05), transparent 70%) !important;
+}
+
+html.light .cur__r {
+  border-color: rgba(18, 18, 20, 0.4) !important;
+}
+
+html.light .cur__l {
+  background: #121214 !important;
+  color: #F8F6F0 !important;
+  box-shadow: 0 12px 30px -8px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Code Inspector & Terminal in Light Mode */
+html.light .terminal-window {
+  background-color: #FFFFFF !important;
+  border-color: rgba(18, 18, 20, 0.12) !important;
+}
+
+
 

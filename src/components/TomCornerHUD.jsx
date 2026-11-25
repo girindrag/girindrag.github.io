@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { X, ArrowUpRight, Download } from 'lucide-react';
+import { X, ArrowUpRight, Download, Sun, Moon } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
+import { useTheme } from '../context/ThemeContext';
 
 // Four Red Dots Diamond Icon with Pulse & Hover Rotation
 export function FourRedDots({ className = "w-4 h-4" }) {
@@ -26,6 +27,7 @@ export function FourRedDots({ className = "w-4 h-4" }) {
 
 export default function TomCornerHUD() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { theme, isDark, toggleTheme, setTheme } = useTheme();
 
   useEffect(() => {
     if (menuOpen) {
@@ -50,8 +52,23 @@ export default function TomCornerHUD() {
         </a>
       </div>
 
-      {/* Floating Top-Right MENU Button (Matching User's Screenshot Exactly) */}
-      <div className="fixed top-5 right-5 sm:top-8 sm:right-8 z-40">
+      {/* Floating Top-Right Theme Toggle & MENU Button */}
+      <div className="fixed top-5 right-5 sm:top-8 sm:right-8 z-40 flex items-center space-x-2.5 sm:space-x-3">
+        {/* Light / Dark Mode Toggle Button */}
+        <button
+          onClick={toggleTheme}
+          className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-[#18181a]/85 hover:bg-[#222226]/90 backdrop-blur-xl border border-white/[0.14] hover:border-white/[0.25] flex items-center justify-center transition-all duration-300 shadow-2xl active:scale-95 group text-[#E7E1D7] hover:text-[#F34213]"
+          title={isDark ? "Switch to Light Mode (T)" : "Switch to Dark Mode (T)"}
+          aria-label={isDark ? "Switch to Light Mode" : "Switch to Dark Mode"}
+        >
+          {isDark ? (
+            <Sun className="w-4 h-4 sm:w-5 sm:h-5 text-[#F34213] transition-transform duration-500 group-hover:rotate-45" />
+          ) : (
+            <Moon className="w-4 h-4 sm:w-5 sm:h-5 text-[#121214] transition-transform duration-500 group-hover:-rotate-12" />
+          )}
+        </button>
+
+        {/* MENU Button */}
         <button
           onClick={() => setMenuOpen(true)}
           className="px-5 py-3 sm:px-6 sm:py-3.5 rounded-2xl bg-[#18181a]/85 hover:bg-[#222226]/90 backdrop-blur-xl border border-white/[0.14] hover:border-white/[0.25] flex items-center space-x-3 transition-all duration-300 shadow-2xl active:scale-95 group"
@@ -70,7 +87,7 @@ export default function TomCornerHUD() {
       {/* Fullscreen Editorial Menu Drawer */}
       {menuOpen && (
         <div className="fixed inset-0 z-50 bg-[#0B0B0B]/98 backdrop-blur-3xl flex flex-col justify-between p-6 sm:p-12 animate-in fade-in duration-200">
-          {/* Top Bar with Close Button */}
+          {/* Top Bar with Theme Switcher and Close Button */}
           <div className="flex items-center justify-between max-w-7xl w-full mx-auto">
             <div className="flex items-center space-x-2 text-xs font-mono uppercase tracking-widest text-[#8E8B83]">
               <FourRedDots className="w-3.5 h-3.5" />
@@ -79,13 +96,37 @@ export default function TomCornerHUD() {
               </span>
             </div>
 
-            <button
-              onClick={() => setMenuOpen(false)}
-              className="w-12 h-12 rounded-full tom-glass hover:bg-white/[0.15] text-[#E7E1D7] flex items-center justify-center transition-all duration-150 active:scale-90"
-              aria-label="Close menu"
-            >
-              <X className="w-5 h-5" />
-            </button>
+            <div className="flex items-center space-x-3">
+              {/* Theme Switcher inside Drawer */}
+              <div className="flex items-center p-1 rounded-xl bg-white/[0.06] border border-white/[0.1]">
+                <button
+                  onClick={() => setTheme('dark')}
+                  className={`flex items-center space-x-1.5 px-3 py-1 rounded-lg font-mono text-[11px] font-bold transition-all ${
+                    isDark ? 'bg-[#F34213] text-[#0B0B0B]' : 'text-[#8E8B83] hover:text-[#E7E1D7]'
+                  }`}
+                >
+                  <Moon className="w-3 h-3" />
+                  <span>DARK</span>
+                </button>
+                <button
+                  onClick={() => setTheme('light')}
+                  className={`flex items-center space-x-1.5 px-3 py-1 rounded-lg font-mono text-[11px] font-bold transition-all ${
+                    !isDark ? 'bg-[#F34213] text-[#0B0B0B]' : 'text-[#8E8B83] hover:text-[#E7E1D7]'
+                  }`}
+                >
+                  <Sun className="w-3 h-3" />
+                  <span>LIGHT</span>
+                </button>
+              </div>
+
+              <button
+                onClick={() => setMenuOpen(false)}
+                className="w-12 h-12 rounded-full tom-glass hover:bg-white/[0.15] text-[#E7E1D7] flex items-center justify-center transition-all duration-150 active:scale-90"
+                aria-label="Close menu"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
           </div>
 
           {/* Massive Typographic Navigation Links */}

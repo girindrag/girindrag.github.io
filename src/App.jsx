@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { ThemeProvider, useTheme } from './context/ThemeContext';
 import CustomCursor from './components/CustomCursor';
 import TomCornerHUD from './components/TomCornerHUD';
 import TomHero from './components/TomHero';
@@ -10,15 +11,18 @@ import TomFooterMarquee from './components/TomFooterMarquee';
 import NakitiBottomDock from './components/NakitiBottomDock';
 import NakitiCodeInspectorModal from './components/NakitiCodeInspectorModal';
 
-export default function App() {
+function PortfolioApp() {
   const [hudOpen, setHudOpen] = useState(false);
+  const { isDark } = useTheme();
 
   return (
-    <div className="min-h-screen bg-[#0B0B0B] text-[#E7E1D7] font-sans relative selection:bg-[#F34213] selection:text-[#0B0B0B] overflow-x-hidden">
+    <div className={`min-h-screen font-sans relative selection:bg-[#F34213] selection:text-[#0B0B0B] overflow-x-hidden transition-colors duration-300 ${
+      isDark ? 'bg-[#0B0B0B] text-[#E7E1D7]' : 'bg-[#F8F6F0] text-[#121214]'
+    }`}>
       {/* Skhiladze-Inspired Interactive Custom Cursor & Spotlight */}
       <CustomCursor />
 
-      {/* Floating Corner HUD (Top-Left 'g.' Monogram + Top-Right 'MENU' with 4 Red Dots Animation) */}
+      {/* Floating Corner HUD (Top-Left 'g.' Monogram + Top-Right Theme Toggle & 'MENU' Button) */}
       <TomCornerHUD />
 
       {/* Main Page Content */}
@@ -38,11 +42,11 @@ export default function App() {
         {/* 5. Experience & Leadership History */}
         <TomExperienceGrid />
 
-        {/* 5. Footer with 3D Extruded Centerpiece & Colossal Running Marquee */}
+        {/* 6. Footer with 3D Extruded Centerpiece & Colossal Running Marquee */}
         <TomFooterMarquee />
       </main>
 
-      {/* Floating Bottom Control Dock (Sound Engine, Code HUD, Resume, Top) */}
+      {/* Floating Bottom Control Dock (Sound Engine, Code HUD, Theme Toggle, Resume, Top) */}
       <NakitiBottomDock 
         onToggleHUD={() => setHudOpen((prev) => !prev)}
         hudOpen={hudOpen}
@@ -54,5 +58,13 @@ export default function App() {
         onClose={() => setHudOpen(false)} 
       />
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <ThemeProvider>
+      <PortfolioApp />
+    </ThemeProvider>
   );
 }

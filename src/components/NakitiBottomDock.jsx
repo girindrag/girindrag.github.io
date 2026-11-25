@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Code, Download, Volume2, VolumeX, ArrowUp, Music } from 'lucide-react';
+import { Code, Download, Volume2, VolumeX, ArrowUp, Music, Sun, Moon } from 'lucide-react';
 import { soundEngine } from '../utils/audioEngine';
 import { FourRedDots } from './TomCornerHUD';
+import { useTheme } from '../context/ThemeContext';
 
 export default function NakitiBottomDock({ onToggleHUD, hudOpen }) {
+  const { isDark, toggleTheme } = useTheme();
   const [isPlaying, setIsPlaying] = useState(false);
   const [track, setTrack] = useState('pulse');
   const [showTrackSelect, setShowTrackSelect] = useState(false);
@@ -179,7 +181,24 @@ export default function NakitiBottomDock({ onToggleHUD, hudOpen }) {
         {/* Vertical Divider */}
         <span className="h-4 w-px bg-white/[0.14]" />
 
-        {/* 4. Resume Button linking to clean resume page */}
+        {/* 4. Light / Dark Theme Toggle Button */}
+        <button
+          onClick={toggleTheme}
+          className="p-1.5 rounded-full text-[#8E8B83] hover:text-[#F34213] hover:bg-white/[0.08] transition-all active:scale-90"
+          title={isDark ? "Switch to Light Mode (T)" : "Switch to Dark Mode (T)"}
+          aria-label={isDark ? "Switch to Light Mode" : "Switch to Dark Mode"}
+        >
+          {isDark ? (
+            <Sun className="w-4 h-4 text-[#F34213] transition-transform duration-300 hover:rotate-45" />
+          ) : (
+            <Moon className="w-4 h-4 text-[#121214] transition-transform duration-300 hover:-rotate-12" />
+          )}
+        </button>
+
+        {/* Vertical Divider */}
+        <span className="h-4 w-px bg-white/[0.14]" />
+
+        {/* 5. Resume Button linking to clean resume page */}
         <a
           href="./resume.html"
           target="_blank"
