@@ -29,6 +29,7 @@ export default function SkhiladzeRadialDial() {
 
   const dragStartRef = useRef({ angle: 0, initialRotation: 0, lastX: 0, lastY: 0, velocity: 0 });
   const animFrameRef = useRef(null);
+  const wheelSnapTimerRef = useRef(null);
   const rotationRef = useRef(0);
   rotationRef.current = rotation;
 
@@ -118,11 +119,11 @@ export default function SkhiladzeRadialDial() {
     const handlePointerUp = () => {
       if (isDragging) {
         setIsDragging(false);
-        // Snap to nearest station with dock tone
+        // Snap to nearest continuous 30-deg station sector without 360-deg rewinds
         const sectorSize = 360 / TOTAL_STATIONS;
-        const norm = ((-rotationRef.current % 360) + 360) % 360;
+        const snappedDeg = Math.round(rotationRef.current / sectorSize) * sectorSize;
+        const norm = ((-snappedDeg % 360) + 360) % 360;
         const nearestIdx = Math.round(norm / sectorSize) % TOTAL_STATIONS;
-        const snappedDeg = -nearestIdx * sectorSize;
 
         setRotation(snappedDeg);
         setActiveStation(nearestIdx);
@@ -138,19 +139,43 @@ export default function SkhiladzeRadialDial() {
     };
   }, [isDragging, activeStation, checkTickAudio, getStationFromRotation]);
 
-  // Wheel scroll to tune
-  const handleWheel = (e) => {
-    e.preventDefault();
-    const delta = Math.sign(e.deltaY) * 6;
-    const newRot = rotationRef.current - delta;
-    setRotation(newRot);
-    checkTickAudio(newRot);
-    const st = getStationFromRotation(newRot);
-    if (st !== activeStation) {
-      setActiveStation(st);
-      soundEngine.playDialTick(1.2);
-    }
-  };
+  // Non-passive wheel listener: prevents default page scroll and auto-snaps on pause
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+
+    const handleNativeWheel = (e) => {
+      e.preventDefault();
+      const delta = Math.sign(e.deltaY) * 6;
+      const newRot = rotationRef.current - delta;
+      setRotation(newRot);
+      checkTickAudio(newRot);
+      const st = getStationFromRotation(newRot);
+      if (st !== activeStation) {
+        setActiveStation(st);
+        soundEngine.playDialTick(1.2);
+      }
+
+      // Debounce snap to nearest station once wheel scrolling pauses
+      if (wheelSnapTimerRef.current) clearTimeout(wheelSnapTimerRef.current);
+      wheelSnapTimerRef.current = setTimeout(() => {
+        const sectorSize = 360 / TOTAL_STATIONS;
+        const snappedDeg = Math.round(rotationRef.current / sectorSize) * sectorSize;
+        const norm = ((-snappedDeg % 360) + 360) % 360;
+        const nearestIdx = Math.round(norm / sectorSize) % TOTAL_STATIONS;
+
+        setRotation(snappedDeg);
+        setActiveStation(nearestIdx);
+        soundEngine.playDialDock();
+      }, 250);
+    };
+
+    el.addEventListener('wheel', handleNativeWheel, { passive: false });
+    return () => {
+      el.removeEventListener('wheel', handleNativeWheel);
+      if (wheelSnapTimerRef.current) clearTimeout(wheelSnapTimerRef.current);
+    };
+  }, [activeStation, checkTickAudio, getStationFromRotation]);
 
   const curDiscipline = DISCIPLINES[activeStation];
 
@@ -176,7 +201,6 @@ export default function SkhiladzeRadialDial() {
       {/* Main Dial Interactive Wheel Container */}
       <div
         ref={containerRef}
-        onWheel={handleWheel}
         onPointerDown={handlePointerDown}
         className={`relative w-[340px] h-[340px] sm:w-[540px] sm:h-[540px] lg:w-[620px] lg:h-[620px] rounded-full flex items-center justify-center touch-none cursor-grab active:cursor-grabbing transition-transform duration-75`}
       >
