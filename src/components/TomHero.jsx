@@ -28,7 +28,7 @@ export default function TomHero() {
       {/* Tom de Koning Style Header Context Bar */}
       <div className="flex flex-wrap items-center justify-between gap-4 text-xs font-mono tracking-widest text-[#8E8B83] uppercase pb-6 border-b border-[#E7E1D7]/[0.1]">
         <div className="flex items-center space-x-3">
-          <span className="text-[#E7E1D7] font-bold">PUN</span>
+          <span className="text-[#E7E1D7] font-bold">PUNE, INDIA</span>
           <span>•</span>
           <span className="text-[#E7E1D7]">{timeStr || '20:40'} IST</span>
         </div>

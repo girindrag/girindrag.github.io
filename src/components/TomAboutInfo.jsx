@@ -27,7 +27,7 @@ export default function TomAboutInfo() {
   const metaRows = [
     { label: 'SERVICES', value: 'Cloud & IoT Architecture, DevOps, Linux Engineering' },
     { label: 'EXPERIENCE', value: '8+ Years in Production Environments' },
-    { label: 'TIMEZONE', value: `PUN / IST (${timeStr || '20:42:00'})` },
+    { label: 'TIMEZONE', value: `PUNE, INDIA / IST (${timeStr || '20:42:00'})` },
     { label: 'AVAILABILITY', value: 'Taking on Senior / Team Lead Roles from Q4' },
     { label: 'ENTERPRISE FLEET', value: '400+ Physical/Virtual Nodes (State Bank of India)' },
     { label: 'CERTIFICATIONS', value: 'Microsoft Certified: Azure Administrator (AZ-104)' },
