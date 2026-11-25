@@ -7,7 +7,7 @@ This file tracks the current state, recent releases, and planned enhancements fo
 ## 🟢 Completed Milestones
 
 - [x] **Tom de Koning & Nakiti Design Overhaul**: Integrated luxury brutalism typography, 4-red-dots diamond motif, and deep charcoal/cream palette.
-- [x] **Stack Kinetic Marquee Hero**: 3-line kinetic running marquee (`GIRINDRA / MOHAN / .WORK`) with vermillion accents.
+- [x] **Skhiladze Radial Dial Hero Centerpiece**: Replaced kinetic running marquee with the interactive 72-tick rotary dial tuner as the primary hero centerpiece, with clean minimal context bar.
 - [x] **Procedural Web Audio Engine**: Zero-asset generative ambient soundscapes (`Pulse` synth arpeggios & `Drift` lush pads) with instant click and chime feedback.
 - [x] **Interactive Sound Bar**: Redesigned bottom dock pill button with 5 animated equalizer bars (`Sound on`) and 5 muted dots (`Sound off`).
 - [x] **Skhiladze Interactive Cursor**: Dual-layer precision cursor with ambient radial spotlight (`.cur-light`), glowing core dot (`.cur__p`), magnetic hover ring (`.cur__r`), dynamic action badges (`.cur__l`), and exponential lerp motion physics.
